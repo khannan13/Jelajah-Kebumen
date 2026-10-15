@@ -46,4 +46,3 @@
 .drawer-note span{display:block;color:#768291;font-size:11px;line-height:1.65}
 body.menu-open{overflow:hidden}
 @media(max-width:850px){.menu-drawer{padding:28px 22px}.menu-button{display:flex!important}}
-
