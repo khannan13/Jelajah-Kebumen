@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lebih Dekat dengan Kebumen | Jelajah Kebumen</title>
+<meta name="description" content="Mengenal lebih dekat Kabupaten Kebumen melalui sejarah, budaya, alam, dan kehidupan masyarakatnya.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="CSS/styles.css">
+</head><body class="subpage">
+<div class="topline"><div class="topline-inner"><span><i class="fa-solid fa-location-dot"></i> KABUPATEN KEBUMEN · JAWA TENGAH</span><span>Portal Cerita, Informasi & Eksplorasi Kebumen</span></div></div>
+<header class="portal-header"><div class="header-inner">
+<button class="menu-button" id="menuButton"><i class="fa-solid fa-bars"></i><span>MENU</span></button>
+<a class="portal-brand" href="index.html"><span class="brand-emblem"><i class="fa-solid fa-compass"></i></span><span><strong>JELAJAH<span>KEBUMEN</span></strong><small>CERITA DARI SELATAN JAWA</small></span></a>
+<form class="header-search" id="headerSearchForm"><i class="fa-solid fa-magnifying-glass"></i><input id="headerSearch" type="search" placeholder="Cari wisata, budaya, kuliner..." aria-label="Cari"></form>
+<nav class="portal-nav" id="portalNav"><a href="index.html">BERANDA</a><a href="index.html#jelajah">WISATA</a><a href="index.html#budaya">BUDAYA</a><a href="index.html#kuliner">KULINER</a><a href="index.html#sejarah">SEJARAH</a><a class="active" href="about.html">TENTANG</a><a class="header-cta" href="feedback.html">BERI MASUKAN</a></nav>
+</div></header>
+<main>
+<section class="subpage-hero"><div class="subpage-wrap"><div class="crumb"><a href="index.html">Beranda</a> <span> / </span> Tentang Kebumen</div>
+<div class="subpage-grid"><div><div class="eyebrow">CERITA DARI JAWA TENGAH</div><h1>Lebih Dekat<br>dengan <em>Kebumen.</em></h1><p>Sebuah perjalanan mengenal tanah yang menyimpan cerita sejarah, tradisi yang terus hidup, serta keindahan alam dari pesisir selatan hingga kawasan perbukitan.</p><a href="#sejarah" class="solid-button">MULAI MENJELAJAH <i class="fa-solid fa-arrow-down"></i></a></div>
+<div class="subpage-image"><img src="images/sejarahkota.jpg" alt="Sejarah dan suasana Kabupaten Kebumen" onerror="this.src='images/sejarahkota2.jpg'"><div class="image-note"><span>KENALI TEMPATNYA</span><strong>Kebumen, ruang bertemunya alam dan cerita.</strong></div></div></div></div></section>
+<section class="story-section" id="sejarah"><div class="subpage-wrap story-grid"><div><span class="story-label">01 / TENTANG KEBUMEN</span><h2>Tempat yang terus bercerita.</h2></div><div class="story-copy"><p>Kabupaten Kebumen berada di bagian selatan Jawa Tengah dan dikenal dengan perpaduan kawasan pesisir, perbukitan, pedesaan, serta ruang-ruang budaya yang masih hidup di tengah masyarakat.</p><p>Melalui website ini, Kebumen tidak hanya dikenalkan sebagai kumpulan tempat untuk dikunjungi. Setiap destinasi, makanan, kesenian, dan jejak sejarah dipandang sebagai bagian dari cerita yang saling terhubung.</p><div class="fact-row"><div class="fact"><span>01 / LOKASI</span><strong>Jawa Tengah, Indonesia</strong></div><div class="fact"><span>02 / KARAKTER</span><strong>Pesisir, perbukitan & pedesaan</strong></div><div class="fact"><span>03 / IDENTITAS</span><strong>Sejarah, budaya & kehidupan lokal</strong></div></div></div></div></section>
+<section class="subpage-band"><div class="subpage-wrap"><div class="eyebrow" style="color:#f0c75d">JEJAK YANG MASIH TERASA</div><h2>Dari Panjer, warisan sejarah, sampai Kebumen hari ini.</h2><p>Sejarah Kebumen dapat dikenali melalui jejak kota, bangunan peninggalan, cerita masyarakat, dan perubahan ruang yang terus berlangsung. Di saat yang sama, budaya seperti Ebleg, Tari Lawet, Cepetan Alas, dan batik menjadi pengingat bahwa cerita daerah bukan hanya masa lalu, tetapi juga sesuatu yang terus bergerak.</p></div></section>
+<section class="story-section"><div class="subpage-wrap story-grid"><div><span class="story-label">02 / ALAM & BUDAYA</span><h2>Kenali bukan hanya tempatnya, tetapi ceritanya.</h2></div><div class="story-copy"><p>Pantai Menganti, Goa Jatijajar, Waduk Sempor, Geopark Kebumen, kuliner khas, dan berbagai kesenian lokal menunjukkan sisi Kebumen yang beragam. Jelajah Kebumen dibuat agar informasi tersebut terasa dekat, mudah ditemukan, dan menyenangkan untuk dipelajari.</p><p>Gunakan halaman utama untuk memilih kategori, mencari cerita, lalu buka detail setiap tempat untuk mengenal informasi lebih jauh.</p></div></div></section>
+<section class="subpage-cta"><div class="subpage-wrap cta-box"><div><div class="eyebrow">SELALU ADA CERITA</div><h2>Sudah siap lebih dekat dengan Kebumen?</h2></div><a class="solid-button" href="index.html#jelajah">JELAJAHI KEBUMEN <i class="fa-solid fa-arrow-right"></i></a></div></section>
+</main>
+<footer class="page-footer"><div class="page-footer-inner"><span>© <span id="currentYear"></span> Jelajah Kebumen · Cerita dari Selatan Jawa</span><span><a href="feedback.html">Beri Masukan</a></span></div></footer>
+<script>const menu=document.getElementById('menuButton'),nav=document.getElementById('portalNav');menu?.addEventListener('click',()=>nav?.classList.toggle('open'));document.getElementById('headerSearchForm')?.addEventListener('submit',e=>{e.preventDefault();const q=document.getElementById('headerSearch').value.trim();if(q)location.href='index.html#jelajah'});document.getElementById('currentYear').textContent=new Date().getFullYear();</script>
+</body></html>
