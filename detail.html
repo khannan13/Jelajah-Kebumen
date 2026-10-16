@@ -1,532 +1,2733 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10263f">
-<title>Detail | Jelajah Kebumen</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<style>
-:root{
-  --navy:#10263f; --navy2:#173d55; --gold:#e7b43f; --cream:#f7f3ea;
-  --ink:#15283d; --muted:#66778a; --line:#e3e8ed; --white:#fff;
-  --shadow:0 18px 50px rgba(16,38,63,.12);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);background:#fff;font-family:"DM Sans",sans-serif}
-a{text-decoration:none;color:inherit}
-.container{width:min(1180px,calc(100% - 40px));margin:auto}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* NAV */
-.topline{height:34px;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em}
-.topline .container{height:100%;display:flex;align-items:center;justify-content:space-between}
-.topline i{color:var(--gold);margin-right:7px}
-.navbar{height:82px;background:#fff;border-bottom:1px solid #edf0f2;position:sticky;top:0;z-index:50}
-.navbar .container{height:100%;display:flex;align-items:center;gap:24px}
-.brand{display:flex;align-items:center;gap:12px;min-width:245px}
-.brand-mark{width:38px;height:38px;border-radius:10px;background:var(--navy);display:grid;place-items:center;color:var(--gold);font-weight:800;border:2px solid #27415a}
-.brand-name{font-family:Manrope,sans-serif;font-size:19px;font-weight:800;letter-spacing:-.04em}
-.brand-name span{color:var(--gold)}
-.brand-sub{font-size:8px;color:#9aa7b4;letter-spacing:.13em;font-weight:700;margin-top:1px}
-.navlinks{margin-left:auto;display:flex;align-items:center;gap:25px;font-size:12px;font-weight:800;color:#536171}
-.navlinks a:hover,.navlinks a.active{color:#d49b1f}
-.nav-cta{padding:12px 18px;background:var(--navy);color:#fff!important;border-radius:999px;box-shadow:0 8px 20px rgba(16,38,63,.15)}
-.back-mobile{display:none}
+    <title>Detail Destinasi | Jelajah Kebumen</title>
 
-/* HERO */
-.detail-hero{position:relative;min-height:650px;color:#fff;overflow:hidden;background:#10263f}
-.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.01)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,24,39,.88) 0%,rgba(8,24,39,.66) 38%,rgba(8,24,39,.22) 72%,rgba(8,24,39,.18) 100%),linear-gradient(0deg,rgba(7,18,28,.7),transparent 50%)}
-.hero-content{position:relative;z-index:2;min-height:650px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:72px}
-.breadcrumb{display:flex;gap:10px;align-items:center;font-size:13px;color:rgba(255,255,255,.75);margin-bottom:26px}
-.breadcrumb a{color:#fff;font-weight:700}
-.breadcrumb i{font-size:10px;opacity:.6}
-.kicker{display:inline-flex;align-items:center;gap:10px;color:#f3c650;font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;margin-bottom:15px}
-.kicker:before{content:"";width:34px;height:2px;background:#f3c650}
-.hero-title{font-family:Manrope,sans-serif;font-size:clamp(48px,7vw,86px);line-height:.98;letter-spacing:-.065em;margin:0;max-width:850px;font-weight:800}
-.hero-title span{color:#f3c650}
-.hero-intro{font-size:18px;line-height:1.65;max-width:700px;color:rgba(255,255,255,.88);margin:24px 0}
-.hero-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
-.meta-pill{padding:10px 14px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.09);backdrop-filter:blur(8px);border-radius:999px;font-size:12px;font-weight:700}
-.hero-actions{display:flex;gap:12px;margin-top:24px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border-radius:8px;font-weight:800;font-size:13px}
-.btn-gold{background:var(--gold);color:var(--navy)}
-.btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.08)}
-.hero-index{position:absolute;right:0;bottom:55px;font-family:Manrope,sans-serif;font-size:90px;font-weight:800;color:rgba(255,255,255,.08);line-height:1}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-/* CONTENT */
-.overlap{margin-top:-38px;position:relative;z-index:5}
-.info-strip{background:#fff;box-shadow:var(--shadow);border-radius:12px;display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden}
-.info-item{padding:23px 26px;border-right:1px solid var(--line)}
-.info-item:last-child{border:0}
-.info-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#9aa6b2;font-weight:800;margin-bottom:6px}
-.info-value{font-size:14px;font-weight:800}
-.info-value i{color:#d7a32b;margin-right:7px}
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-.content{padding:90px 0 70px}
-.content-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(290px,.75fr);gap:70px}
-.section-kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#c38d1c;font-weight:800;display:flex;align-items:center;gap:10px}
-.section-kicker:before{content:"";width:30px;height:2px;background:#e7b43f}
-.content h2{font-family:Manrope,sans-serif;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.045em;margin:12px 0 18px}
-.content h2 span{color:#d99d20}
-.lead{font-size:18px;line-height:1.8;color:#4e6275;margin:0 0 40px}
-.story-card{background:var(--cream);border-radius:14px;padding:32px;margin:28px 0}
-.story-head{display:flex;align-items:center;gap:14px;margin-bottom:15px}
-.story-icon{width:44px;height:44px;border-radius:10px;background:var(--navy);color:#f2c54d;display:grid;place-items:center}
-.story-card h3{font-family:Manrope;margin:0;font-size:21px}
-.story-card p,.highlight p{font-size:16px;line-height:1.8;color:#526577;margin:0}
-.highlight{padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.highlight h3{font-family:Manrope;font-size:25px;margin:0 0 10px}
-.note{display:flex;gap:12px;margin-top:25px;color:#617184;font-size:13px;line-height:1.65}
-.note i{color:#d8a126;margin-top:3px}
-.sidebar{position:relative}
-.side-card{border:1px solid var(--line);border-radius:14px;padding:28px;background:#fff;margin-bottom:18px}
-.side-card.dark{background:var(--navy);color:#fff;border-color:var(--navy)}
-.side-card h3{font-family:Manrope;font-size:25px;line-height:1.15;margin:10px 0}
-.side-card p{font-size:14px;line-height:1.7;color:#6b7b8c}
-.dark p{color:rgba(255,255,255,.72)}
-.side-link{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:800;color:#d49b1f;margin-top:12px}
-.dark .side-link{color:#f5c44b}
-.side-icon{width:46px;height:46px;border-radius:12px;background:#f8edcf;color:#d49b1f;display:grid;place-items:center}
-.dark .side-icon{background:rgba(255,255,255,.1)}
-.fact-list{display:grid;gap:12px;margin-top:22px}
-.fact{display:flex;gap:11px;align-items:flex-start;font-size:13px;color:#617184}
-.fact i{color:#d49b1f;margin-top:3px}
+    <style>
+        :root {
+            --cream: #f6f0e5;
+            --cream-soft: #fbf8f2;
+            --brown: #3f3428;
+            --brown-soft: #6d5d4d;
+            --green: #526653;
+            --green-dark: #344936;
+            --white: #ffffff;
+            --line: rgba(63, 52, 40, .12);
+            --shadow: 0 18px 50px rgba(45, 36, 27, .12);
+        }
 
-/* RELATED */
-.related{background:#f6f8fa;padding:75px 0}
-.related-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:25px}
-.related h2{font-family:Manrope;font-size:36px;letter-spacing:-.04em;margin:7px 0 0}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.related-card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e7ebef;transition:.25s}
-.related-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(16,38,63,.1)}
-.related-img{height:190px;background-size:cover;background-position:center}
-.related-body{padding:18px}
-.related-cat{font-size:10px;color:#c18c1d;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
-.related-body h3{font-family:Manrope;font-size:20px;margin:8px 0}
-.related-body a{font-size:12px;font-weight:800;color:#173d55}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* FOOTER */
-footer{background:var(--navy);color:#fff;padding:34px 0}
-.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}
-.footer-row p{margin:0;color:rgba(255,255,255,.62);font-size:12px}
-.footer-row a{font-size:12px;font-weight:800;color:#f3c650}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* responsive */
-@media(max-width:900px){
-  .topline .container{justify-content:center}.topline .container>span:last-child{display:none}
-  .navbar{height:70px}.navlinks{display:none}.brand{min-width:0}.brand-sub{display:none}
-  .back-mobile{display:inline-flex;margin-left:auto}
-  .detail-hero,.hero-content{min-height:620px}
-  .content-grid{grid-template-columns:1fr;gap:35px}
-  .sidebar{display:grid;grid-template-columns:1fr 1fr;gap:15px}.side-card{margin:0}
-}
-@media(max-width:620px){
-  .container{width:min(100% - 28px,1180px)}
-  .brand-name{font-size:17px}.brand-mark{width:34px;height:34px}
-  .hero-content{padding-bottom:45px}
-  .hero-title{font-size:48px}
-  .hero-intro{font-size:15px}
-  .hero-index{display:none}
-  .info-strip{grid-template-columns:1fr}.info-item{border-right:0;border-bottom:1px solid var(--line)}
-  .content{padding:65px 0 50px}.sidebar{grid-template-columns:1fr}
-  .related-grid{grid-template-columns:1fr}
-  .related-head{display:block}
-  .footer-row{display:block}.footer-row a{display:inline-block;margin-top:12px}
-}
-</style>
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--brown);
+            background: var(--cream-soft);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 18px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            color: #fff;
+            background: rgba(32, 39, 31, .45);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            transition: .3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(248, 243, 234, .96);
+            color: var(--brown);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, .08);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+
+            background: rgba(255,255,255,.18);
+            border: 1px solid rgba(255,255,255,.35);
+            font-size: 17px;
+        }
+
+        .navbar.scrolled .brand-mark {
+            background: var(--green);
+            color: #fff;
+            border-color: var(--green);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .7px;
+            opacity: .9;
+            transition: .25s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        .menu-button {
+            display: none;
+            border: none;
+            background: transparent;
+            color: inherit;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .detail-hero {
+            min-height: 88vh;
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: flex-end;
+            padding: 120px 7% 70px;
+
+            color: #fff;
+            background: #283229;
+        }
+
+        .detail-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(18, 25, 20, .18) 0%,
+                    rgba(18, 25, 20, .18) 35%,
+                    rgba(18, 25, 20, .82) 100%
+                );
+
+            z-index: 1;
+        }
+
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            transform: scale(1.02);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: min(900px, 100%);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 20px;
+
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .8px;
+            text-transform: uppercase;
+
+            color: rgba(255,255,255,.82);
+        }
+
+        .breadcrumb span {
+            opacity: .55;
+        }
+
+        .hero-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 7px 13px;
+            margin-bottom: 17px;
+
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 999px;
+
+            background: rgba(255,255,255,.12);
+            backdrop-filter: blur(10px);
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .hero-title {
+            max-width: 850px;
+
+            font-family: "Playfair Display", serif;
+            font-size: clamp(45px, 7vw, 86px);
+            line-height: .98;
+            letter-spacing: -2px;
+
+            margin-bottom: 22px;
+        }
+
+        .hero-intro {
+            max-width: 760px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: rgba(255,255,255,.9);
+        }
+
+        .hero-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-top: 24px;
+
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,.86);
+        }
+
+        .scroll-label {
+            position: absolute;
+            right: 7%;
+            bottom: 34px;
+            z-index: 3;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: .7;
+        }
+
+        .scroll-line {
+            width: 55px;
+            height: 1px;
+            background: rgba(255,255,255,.6);
+        }
+
+        /* =========================
+           INFO STRIP
+        ========================= */
+
+        .info-strip {
+            width: min(1100px, 90%);
+            margin: -38px auto 0;
+            position: relative;
+            z-index: 5;
+
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            overflow: hidden;
+        }
+
+        .info-item {
+            padding: 25px 28px;
+            border-right: 1px solid var(--line);
+        }
+
+        .info-item:last-child {
+            border-right: none;
+        }
+
+        .info-label {
+            display: block;
+            margin-bottom: 5px;
+
+            color: #968879;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        .info-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--brown);
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .content-section {
+            width: min(1100px, 90%);
+            margin: 85px auto;
+        }
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.65fr) minmax(280px, .75fr);
+            gap: 65px;
+            align-items: start;
+        }
+
+        .content-main {
+            min-width: 0;
+        }
+
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 12px;
+
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 2px;
+            background: var(--green);
+        }
+
+        .section-title {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        .lead {
+            font-size: 17px;
+            color: var(--brown-soft);
+            line-height: 1.9;
+            margin-bottom: 35px;
+        }
+
+        .story-block {
+            margin-bottom: 50px;
+        }
+
+        .story-block h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 29px;
+            margin-bottom: 15px;
+            line-height: 1.25;
+        }
+
+        .story-block p {
+            color: #6d6258;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+
+        /* =========================
+           HIGHLIGHTS
+        ========================= */
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .highlight-card {
+            padding: 22px;
+
+            background: #f1eadf;
+            border-radius: 17px;
+
+            transition: .25s ease;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(63,52,40,.08);
+        }
+
+        .highlight-number {
+            display: inline-grid;
+            place-items: center;
+
+            width: 31px;
+            height: 31px;
+            margin-bottom: 13px;
+
+            border-radius: 50%;
+            background: var(--green);
+            color: #fff;
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .highlight-card h3 {
+            font-size: 15px;
+            margin-bottom: 7px;
+        }
+
+        .highlight-card p {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #766b61;
+        }
+
+        /* =========================
+           VISIT NOTE
+        ========================= */
+
+        .visit-note {
+            margin-top: 10px;
+            padding: 27px;
+
+            border-left: 4px solid var(--green);
+            border-radius: 0 16px 16px 0;
+
+            background: #edf0e9;
+        }
+
+        .visit-note strong {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .visit-note p {
+            margin: 0;
+            font-size: 14px;
+            color: #5f625c;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 27px;
+            margin-bottom: 18px;
+            box-shadow: 0 10px 35px rgba(63,52,40,.06);
+        }
+
+        .sidebar-card h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .location-box {
+            padding: 18px;
+            border-radius: 15px;
+            background: #f3eee6;
+            margin-bottom: 17px;
+        }
+
+        .location-box .pin {
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .location-box strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .location-box p {
+            color: #74695f;
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        .category-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 13px 0;
+            border-bottom: 1px solid var(--line);
+
+            font-size: 13px;
+        }
+
+        .category-box:last-child {
+            border-bottom: none;
+        }
+
+        .category-box span {
+            color: #8b8178;
+        }
+
+        .category-box strong {
+            font-size: 13px;
+        }
+
+        .source-box {
+            font-size: 12px;
+            color: #8a8076;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           RELATED
+        ========================= */
+
+        .related-section {
+            background: #e9e2d7;
+            padding: 80px 5%;
+        }
+
+        .related-inner {
+            width: min(1100px, 100%);
+            margin: auto;
+        }
+
+        .related-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .related-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(31px, 4vw, 46px);
+            line-height: 1.1;
+        }
+
+        .related-heading p {
+            max-width: 400px;
+            color: #74695f;
+            font-size: 14px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .related-card {
+            display: block;
+            background: var(--white);
+            border-radius: 19px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(63,52,40,.07);
+            transition: .3s ease;
+        }
+
+        .related-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(63,52,40,.13);
+        }
+
+        .related-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .related-content {
+            padding: 20px;
+        }
+
+        .related-category {
+            color: var(--green);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .related-content h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 23px;
+            line-height: 1.2;
+            margin: 7px 0 8px;
+        }
+
+        .related-content p {
+            color: #7b7167;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #2e382e;
+            color: #fff;
+            padding: 55px 5% 25px;
+        }
+
+        .footer-inner {
+            width: min(1100px, 100%);
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            margin-bottom: 9px;
+        }
+
+        .footer-brand p {
+            max-width: 420px;
+            color: rgba(255,255,255,.67);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+            color: rgba(255,255,255,.75);
+        }
+
+        .footer-bottom {
+            width: min(1100px, 100%);
+            margin: auto;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,.12);
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            color: rgba(255,255,255,.45);
+            font-size: 11px;
+        }
+
+        .back-top {
+            cursor: pointer;
+        }
+
+        /* =========================
+           ERROR
+        ========================= */
+
+        .error-screen {
+            min-height: 100vh;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+            background: var(--cream-soft);
+        }
+
+        .error-screen.show {
+            display: flex;
+        }
+
+        .error-box {
+            max-width: 600px;
+        }
+
+        .error-box h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .error-box p {
+            color: #766b61;
+            margin-bottom: 25px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: var(--green);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .detail-hero {
+                min-height: 78vh;
+                padding: 120px 6% 65px;
+            }
+
+            .hero-title {
+                font-size: clamp(43px, 11vw, 70px);
+            }
+
+            .content-layout {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                padding: 15px 5%;
+            }
+
+            .brand {
+                font-size: 14px;
+            }
+
+            .brand-mark {
+                width: 34px;
+                height: 34px;
+            }
+
+            .detail-hero {
+                min-height: 75vh;
+                padding: 105px 5% 55px;
+            }
+
+            .breadcrumb {
+                font-size: 10px;
+            }
+
+            .hero-title {
+                font-size: 43px;
+                letter-spacing: -1.3px;
+            }
+
+            .hero-intro {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .scroll-label {
+                display: none;
+            }
+
+            .info-strip {
+                width: 90%;
+                margin-top: -25px;
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                padding: 18px 20px;
+            }
+
+            .info-item:last-child {
+                border-bottom: none;
+            }
+
+            .content-section {
+                width: 90%;
+                margin: 60px auto;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .lead {
+                font-size: 15px;
+            }
+
+            .story-block h2 {
+                font-size: 26px;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .related-section {
+                padding: 60px 5%;
+            }
+
+            .related-heading {
+                display: block;
+            }
+
+            .related-heading p {
+                margin-top: 12px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .related-image {
+                height: 230px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="topline">
-  <div class="container">
-    <span><i class="fa-solid fa-location-dot"></i> KABUPATEN KEBUMEN · JAWA TENGAH</span>
-    <span>Jelajah cerita, budaya, rasa, dan alam Kebumen</span>
-  </div>
-</div>
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
-<nav class="navbar">
-  <div class="container">
-    <a class="brand" href="index.html">
-      <span class="brand-mark"><i class="fa-solid fa-compass"></i></span>
-      <span>
-        <span class="brand-name">JELAJAH<span>KEBUMEN.</span></span>
-        <span class="brand-sub">CERITA DARI SELATAN JAWA</span>
-      </span>
-    </a>
-    <div class="navlinks">
-      <a href="index.html">BERANDA</a>
-      <a href="index.html#jelajah">JELAJAH</a>
-      <a href="about.html">TENTANG KEBUMEN</a>
-      <a href="feedback.html">FEEDBACK</a>
-      <a class="nav-cta" href="index.html#jelajah">JELAJAHI</a>
-    </div>
-    <a class="back-mobile" href="index.html#jelajah" aria-label="Kembali"><i class="fa-solid fa-arrow-left"></i></a>
-  </div>
-</nav>
+    <header class="navbar" id="navbar">
 
-<main>
-<section class="detail-hero">
-  <div class="hero-bg" id="heroBg"></div>
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <div class="breadcrumb">
-      <a href="index.html">Beranda</a><i class="fa-solid fa-chevron-right"></i>
-      <a href="index.html#jelajah">Jelajah Kebumen</a><i class="fa-solid fa-chevron-right"></i>
-      <span id="detailCategory">Cerita Kebumen</span>
-    </div>
-    <div class="kicker" id="heroKicker">MENGENAL KEBUMEN LEBIH DEKAT</div>
-    <h1 class="hero-title" id="detailTitle">Cerita dari <span>Kebumen.</span></h1>
-    <p class="hero-intro" id="detailIntro"></p>
-    <div class="hero-meta">
-      <span class="meta-pill"><i class="fa-solid fa-location-dot"></i> Kabupaten Kebumen, Jawa Tengah</span>
-      <span class="meta-pill" id="metaCategory">Jelajah Kebumen</span>
-    </div>
-    <div class="hero-actions">
-      <a class="btn btn-gold" href="#mengenal">Mengenal lebih dekat <i class="fa-solid fa-arrow-down"></i></a>
-      <a class="btn btn-ghost" href="index.html#jelajah"><i class="fa-solid fa-arrow-left"></i> Kembali ke jelajah</a>
-    </div>
-    <div class="hero-index">01</div>
-  </div>
-</section>
+        <a href="index.html" class="brand">
+            <div class="brand-mark">K</div>
+            <span>Jelajah Kebumen</span>
+        </a>
 
-<div class="container overlap">
-  <div class="info-strip">
-    <div class="info-item"><div class="info-label">Kategori</div><div class="info-value"><i class="fa-solid fa-compass"></i><span id="infoCategory">Wisata</span></div></div>
-    <div class="info-item"><div class="info-label">Lokasi</div><div class="info-value"><i class="fa-solid fa-location-dot"></i>Kabupaten Kebumen</div></div>
-    <div class="info-item"><div class="info-label">Tentang</div><div class="info-value"><i class="fa-solid fa-book-open"></i>Cerita lokal Kebumen</div></div>
-  </div>
-</div>
+        <nav class="nav-links">
+            <a href="index.html">BERANDA</a>
+            <a href="index.html?category=Wisata">WISATA</a>
+            <a href="index.html?category=Budaya">BUDAYA</a>
+            <a href="index.html?category=Kuliner">KULINER</a>
+            <a href="index.html?category=Sejarah">SEJARAH</a>
+            <a href="about.html">TENTANG</a>
+            <a href="feedback.html">BERI MASUKAN</a>
+        </nav>
 
-<section class="content" id="mengenal">
-  <div class="container content-grid">
-    <article>
-      <div class="section-kicker">MENGENAL LEBIH DEKAT</div>
-      <h2>Tentang <span id="detailTitleInline">tempat ini</span>.</h2>
-      <p class="lead" id="detailDescription"></p>
+        <button class="menu-button" id="menuButton" aria-label="Buka menu">
+            ☰
+        </button>
 
-      <div class="story-card">
-        <div class="story-head">
-          <div class="story-icon"><i class="fa-solid fa-landmark"></i></div>
-          <h3>Sejarah dan asal-usul</h3>
+    </header>
+
+
+    <!-- =========================
+         DETAIL
+    ========================== -->
+
+    <main id="detailPage">
+
+        <!-- HERO -->
+
+        <section class="detail-hero">
+
+            <img
+                src=""
+                alt=""
+                class="hero-background"
+                id="heroImage"
+            >
+
+            <div class="hero-content">
+
+                <div class="breadcrumb">
+                    <a href="index.html">Jelajah Kebumen</a>
+                    <span>/</span>
+                    <span id="breadcrumbCategory">Wisata</span>
+                </div>
+
+                <div class="hero-category" id="heroCategory">
+                    Wisata
+                </div>
+
+                <h1 class="hero-title" id="detailTitle">
+                    Memuat...
+                </h1>
+
+                <p class="hero-intro" id="heroIntro">
+                    Memuat informasi destinasi...
+                </p>
+
+                <div class="hero-location">
+                    <span>📍</span>
+                    <span id="heroLocation">Kabupaten Kebumen</span>
+                </div>
+
+            </div>
+
+            <div class="scroll-label">
+                <span class="scroll-line"></span>
+                <span>Scroll untuk menjelajah</span>
+            </div>
+
+        </section>
+
+
+        <!-- INFO STRIP -->
+
+        <section class="info-strip">
+
+            <div class="info-item">
+                <span class="info-label">Kategori</span>
+                <span class="info-value" id="infoCategory">
+                    -
+                </span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Lokasi</span>
+                <span class="info-value" id="infoLocation">
+                    -
+                </span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Wilayah</span>
+                <span class="info-value">
+                    Kabupaten Kebumen
+                </span>
+            </div>
+
+        </section>
+
+
+        <!-- CONTENT -->
+
+        <section class="content-section">
+
+            <div class="content-layout">
+
+                <article class="content-main">
+
+                    <div class="eyebrow">
+                        Mengenal lebih dekat
+                    </div>
+
+                    <h2 class="section-title" id="contentHeading">
+                        Mengenal Lebih Dekat
+                    </h2>
+
+                    <p class="lead" id="detailDescription">
+                        Memuat informasi...
+                    </p>
+
+
+                    <!-- SEJARAH -->
+
+                    <div class="story-block">
+
+                        <h2>
+                            Sejarah dan Asal Usul
+                        </h2>
+
+                        <div id="detailHistory">
+                            <p>Memuat informasi sejarah...</p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- HIGHLIGHTS -->
+
+                    <div class="story-block">
+
+                        <h2>
+                            Hal yang Menarik untuk Diketahui
+                        </h2>
+
+                        <div
+                            class="highlight-grid"
+                            id="highlightGrid"
+                        >
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOTE -->
+
+                    <div class="visit-note">
+
+                        <strong>
+                            Catatan untuk Pengunjung
+                        </strong>
+
+                        <p id="detailNote">
+                            Memuat catatan...
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SIDEBAR -->
+
+                <aside class="sidebar">
+
+                    <div class="sidebar-card">
+
+                        <h3>
+                            Tentang Tempat Ini
+                        </h3>
+
+                        <div class="location-box">
+
+                            <div class="pin">
+                                📍
+                            </div>
+
+                            <strong id="sideLocation">
+                                Kabupaten Kebumen
+                            </strong>
+
+                            <p id="sideLocationDescription">
+                                Lokasi destinasi.
+                            </p>
+
+                        </div>
+
+                        <div class="category-box">
+                            <span>Kategori</span>
+                            <strong id="sideCategory">-</strong>
+                        </div>
+
+                        <div class="category-box">
+                            <span>Wilayah</span>
+                            <strong>Kebumen</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="sidebar-card">
+
+                        <h3>
+                            Sumber Informasi
+                        </h3>
+
+                        <p
+                            class="source-box"
+                            id="detailSource"
+                        >
+                            Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen.
+                        </p>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- RELATED -->
+
+        <section class="related-section">
+
+            <div class="related-inner">
+
+                <div class="related-heading">
+
+                    <div>
+                        <div class="eyebrow">
+                            Jelajah berikutnya
+                        </div>
+
+                        <h2>
+                            Cerita Lain dari Kebumen
+                        </h2>
+                    </div>
+
+                    <p>
+                        Masih banyak tempat, budaya, kuliner,
+                        dan cerita menarik yang bisa ditemukan
+                        di berbagai sudut Kebumen.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="related-grid"
+                    id="relatedGrid"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         ERROR
+    ========================== -->
+
+    <section
+        class="error-screen"
+        id="errorScreen"
+    >
+
+        <div class="error-box">
+
+            <h1>
+                Cerita tidak ditemukan
+            </h1>
+
+            <p>
+                Destinasi yang kamu cari belum tersedia
+                atau alamat halaman tidak sesuai.
+            </p>
+
+            <a
+                href="index.html"
+                class="back-button"
+            >
+                ← Kembali ke Jelajah Kebumen
+            </a>
+
         </div>
-        <p id="detailHistory"></p>
-      </div>
 
-      <div class="highlight">
-        <h3>Hal menarik untuk diketahui</h3>
-        <p id="detailHighlights"></p>
-      </div>
+    </section>
 
-      <div class="note">
-        <i class="fa-solid fa-circle-info"></i>
-        <span id="detailNote">Informasi disusun untuk pengenalan umum. Periksa sumber resmi setempat untuk informasi terbaru.</span>
-      </div>
-    </article>
 
-    <aside class="sidebar">
-      <div class="side-card dark">
-        <div class="side-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-        <h3>Lebih dekat dengan Kebumen.</h3>
-        <p>Setiap tempat punya cerita. Jelajahi destinasi, budaya, kuliner, dan sejarah lainnya yang ada di Kabupaten Kebumen.</p>
-        <a class="side-link" href="index.html#jelajah">Lihat semua cerita <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-      <div class="side-card">
-        <div class="side-icon"><i class="fa-solid fa-circle-check"></i></div>
-        <h3>Catatan kunjungan</h3>
-        <div class="fact-list">
-          <div class="fact"><i class="fa-solid fa-location-dot"></i><span>Periksa lokasi dan akses terbaru sebelum berkunjung.</span></div>
-          <div class="fact"><i class="fa-solid fa-cloud-sun"></i><span>Sesuaikan perjalanan dengan kondisi cuaca dan lingkungan.</span></div>
-          <div class="fact"><i class="fa-solid fa-heart"></i><span>Jaga kebersihan dan hormati budaya serta masyarakat setempat.</span></div>
+    <footer>
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+
+                <h3>
+                    Jelajah Kebumen
+                </h3>
+
+                <p>
+                    Sebuah ruang sederhana untuk mengenal
+                    lebih dekat wisata, budaya, kuliner,
+                    sejarah, dan cerita dari Kabupaten Kebumen.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Beranda
+                </a>
+
+                <a href="about.html">
+                    Tentang
+                </a>
+
+                <a href="feedback.html">
+                    Beri Masukan
+                </a>
+
+            </div>
+
         </div>
-      </div>
 
-      <div class="side-card">
-        <div class="side-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
-        <h3>Informasi lebih lanjut</h3>
-        <p>Gunakan sumber resmi pemerintah atau pengelola untuk memeriksa informasi terbaru.</p>
-        <a id="detailSource" class="side-link" href="https://www.kebumenkab.go.id/" target="_blank" rel="noopener">Buka sumber resmi <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-      </div>
-    </aside>
-  </div>
-</section>
 
-<section class="related">
-  <div class="container">
-    <div class="related-head">
-      <div>
-        <div class="section-kicker">JELAJAHI LAGI</div>
-        <h2>Masih banyak cerita di Kebumen.</h2>
-      </div>
-      <a class="btn" style="background:#10263f;color:#fff" href="index.html#jelajah">Lihat semua <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="related-grid" id="relatedGrid"></div>
-  </div>
-</section>
-</main>
+        <div class="footer-bottom">
 
-<footer>
-  <div class="container footer-row">
-    <p>© <span id="detailYear"></span> Jelajah Kebumen · Cerita dari Selatan Jawa.</p>
-    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Kembali ke atas <i class="fa-solid fa-arrow-up"></i></a>
-  </div>
-</footer>
+            <span>
+                © <span id="currentYear"></span>
+                Jelajah Kebumen
+            </span>
 
-<script>
-(() => {
-    const data = {
-        menganti: {
-            title: "Pantai Menganti", category: "Wisata alam",
-            image: "images/wisata.jpg",
-            intro: "Pantai berpasir putih yang berpadu dengan tebing karst dan perbukitan hijau di pesisir selatan Kebumen.",
-            description: "Pantai Menganti berada di Desa Karangduwur, Kecamatan Ayah. Pemandangan laut dari ketinggian, garis pantai, dan perbukitan di sekitarnya menjadi daya tarik utama tempat ini.",
-            history: "Pantai Menganti dikenal sebagai destinasi wisata alam pesisir selatan Kebumen. Informasi resmi pariwisata daerah menempatkannya di Desa Karangduwur, Kecamatan Ayah. Untuk kisah asal-usul nama atau sejarah lokal yang lebih rinci, sebaiknya merujuk kepada pemerintah desa atau pengelola setempat.",
-            highlights: "Pengunjung dapat menikmati panorama Samudra Hindia dari area perbukitan. Kawasan Tanjung Karangbata dan mercusuar juga dikenal sebagai titik pandang di sekitar pantai.",
-            note: "Lokasi: Desa Karangduwur, Kecamatan Ayah. Perhatikan kondisi ombak, cuaca, dan petunjuk keselamatan di lokasi.",
-            source: "https://disparbud.kebumenkab.go.id/index.php/web/post/1395/pantai-menganti"
-        },
-        suwuk: {
-            title: "Pantai Suwuk", category: "Wisata alam",
-            image: "images/wisata1.jpg",
-            intro: "Destinasi pesisir dengan panorama Samudra Hindia, bukit-bukit, dan suasana pantai yang khas.",
-            description: "Pantai Suwuk terletak di Desa Tambakmulya, Kecamatan Puring. Kawasan ini menjadi pilihan wisatawan yang ingin menikmati pemandangan laut dan suasana pesisir Kebumen.",
-            history: "Pantai Suwuk berkembang sebagai salah satu tujuan wisata pesisir di Kecamatan Puring. Informasi pariwisata pemerintah daerah mencatat lokasinya di Desa Tambakmulya. Untuk sejarah pembukaan atau perkembangan awal kawasan wisata ini, gunakan keterangan dari pemerintah desa atau pengelola setempat.",
-            highlights: "Daya tariknya meliputi pemandangan pantai, bukit di sekitar pesisir, aktivitas rekreasi, dan wahana yang tersedia sesuai kondisi operasional.",
-            note: "Lokasi: Desa Tambakmulya, Kecamatan Puring. Ombak pantai selatan dapat kuat; ikuti arahan keselamatan dan jangan berenang di area berbahaya.",
-            source: "https://disparbud.kebumenkab.go.id/index.php/web/post/1389/pantai-suwuk"
-        },
-        jatijajar: {
-            title: "Goa Jatijajar", category: "Wisata alam dan sejarah",
-            image: "images/wisata2.jpg",
-            intro: "Gua batu kapur yang memadukan bentang alam, formasi gua, dan cerita rakyat yang dikenal masyarakat.",
-            description: "Goa Jatijajar berada di Desa Jatijajar, Kecamatan Ayah. Bagian dalam gua memperlihatkan bentukan alam dari batu kapur yang terbentuk melalui proses geologi dalam waktu yang panjang.",
-            history: "Catatan pemerintah daerah menyebut gua ini ditemukan pada 1802 oleh seorang petani bernama Jaya Menawi atau Djayamenawi. Gua kemudian dikembangkan menjadi objek wisata pada 1970-an. Kisah legenda yang menyertainya juga menjadi bagian dari pengalaman pengunjung.",
-            highlights: "Daya tariknya mencakup ruang gua, stalaktit dan stalagmit, serta diorama yang menggambarkan cerita legenda. Jaga kebersihan dan ikuti jalur yang ditetapkan pengelola.",
-            note: "Lokasi: Desa Jatijajar, Kecamatan Ayah. Detail sejarah dirangkum dari informasi pemerintah daerah.",
-            source: "https://perizinan.kebumenkab.go.id/investasi/web/wisata/detail/1"
-        },
-        sempor: {
-            title: "Waduk Sempor", category: "Wisata alam dan sejarah",
-            image: "images/wisata3.jpg",
-            intro: "Waduk yang dikelilingi perbukitan dan memiliki peran penting bagi pengairan serta kehidupan masyarakat.",
-            description: "Waduk Sempor berada di Kecamatan Sempor. Selain menjadi tujuan untuk menikmati pemandangan, waduk ini juga memiliki fungsi penting dalam pengairan, pembangkit listrik, perikanan, dan pengelolaan air.",
-            history: "Rencana pembangunan waduk telah diteliti sejak masa Hindia Belanda. Pembangunan kemudian dilanjutkan setelah Indonesia merdeka. Bendungan yang dibangun pada tahap awal mengalami kegagalan pada 1967 dan menimbulkan korban jiwa. Waduk kemudian dibangun kembali dengan konstruksi permanen dan diresmikan pada 1978. Monumen di kawasan ini menjadi pengingat tragedi tersebut.",
-            highlights: "Pemandangan perairan dan perbukitan menjadi daya tariknya. Waduk juga menunjukkan hubungan erat antara infrastruktur air, pertanian, energi, dan sejarah masyarakat setempat.",
-            note: "Hormati kawasan waduk sebagai infrastruktur penting. Ikuti aturan pengelola saat berwisata.",
-            source: "https://www.kebumenkab.go.id/index.php/web/article/detail/2916"
-        },
-        cepetan: {
-            title: "Tari Cepetan Alas", category: "Budaya",
-            image: "images/budaya.jpg",
-            intro: "Kesenian tradisional Kebumen yang menampilkan topeng, gerak tari, dan cerita yang hidup di masyarakat.",
-            description: "Tari Cepetan Alas merupakan salah satu kesenian tradisional yang dikenal di wilayah Kebumen. Pertunjukannya menggabungkan gerak, musik, topeng, dan unsur cerita yang diwariskan melalui kehidupan masyarakat.",
-            history: "Kesenian tradisional tumbuh dan berubah melalui praktik komunitas yang menjaganya. Cerita rinci mengenai asal-usul, tokoh, dan perkembangan Tari Cepetan Alas dapat berbeda menurut kelompok atau desa pelestarinya; keterangan lokal sebaiknya dicocokkan dengan pelaku seni dan sumber kebudayaan daerah.",
-            highlights: "Topeng dan karakter yang ditampilkan menjadi unsur visual penting. Pertunjukan juga menjadi ruang bagi generasi muda untuk mengenal seni tradisi.",
-            note: "Berbeda dengan tari tradisional Jawa lainnya yang cenderung halus dan anggun, Tari Cepetan menampilkan gerakan-gerakan akrobatik yang energik. Para penari, yang biasanya adalah laki-laki, mengenakan topeng cepet yang terbuat dari kayu dan dihiasi rambut ijuk atau serat nanas. Topeng ini sering kali memiliki ekspresi seram atau lucu yang semakin menambah daya tarik pertunjukan.",
-            source: "https://disparbud.kebumenkab.go.id/index.php/web/post/384/tari-cepetan"
-        },
-        lawet: {
-            title: "Tari Lawet", category: "Budaya",
-            image: "images/budaya2.jpg",
-            intro: "Tarian yang terinspirasi dari burung lawet atau walet, yang lekat dengan identitas dan kehidupan masyarakat Kebumen.",
-            description: "Tari Lawet menggambarkan gerakan burung lawet melalui gerakan yang lincah dan dinamis. Tarian ini menjadi salah satu simbol seni budaya Kebumen.",
-            history: "Menurut publikasi Pemerintah Kabupaten Kebumen, Tari Lawet pertama kali dipentaskan pada 1987. Inspirasinya berkaitan dengan burung walet dan peran sarangnya bagi kehidupan ekonomi masyarakat pesisir selatan.",
-            highlights: "Gerakan penari menirukan burung yang terbang dan mencari makan. Musik pengiring dan kostum mendukung gambaran burung lawet dalam pertunjukan.",
-            note: "Informasi diringkas dari publikasi resmi pemerintah daerah.",
-            source: "https://www.kebumenkab.go.id/index.php/web/article/detail/8209"
-        },
-        batik: {
-            title: "Batik Kebumen", category: "Budaya dan kerajinan",
-            image: "images/batik.jpg",
-            intro: "Kerajinan batik yang menjaga keterampilan membatik sekaligus menampilkan karakter budaya lokal.",
-            description: "Batik Kebumen dibuat melalui proses membatik yang membutuhkan ketelitian. Perajin menghasilkan kain dengan motif dan warna yang berkembang dari tradisi setempat.",
-            history: "Publikasi pemerintah daerah menyebut terdapat lebih dari satu versi tentang awal tradisi batik di Kebumen. Tradisi ini diwariskan turun-temurun dan pernah mengalami masa kejayaan pada sekitar 1960–1980-an, sebelum menghadapi masa surut dan upaya kebangkitan kembali.",
-            highlights: "Batik tulis dan batik cap merupakan dua teknik yang dikenal. Proses tradisional, ragam motif, serta keterampilan perajin menjadi bagian penting dari nilai kerajinan ini.",
-            note: "Keterangan sejarah batik Kebumen memiliki beberapa versi; uraian ini menyampaikan ringkasan tanpa menganggap satu versi sebagai satu-satunya kisah.",
-            source: "https://www.kebumenkab.go.id/index.php/web/article/detail/5035"
-        },
-        ebleg: {
-            title: "Ebleg", category: "Budaya",
-            image: "images/ebleg.jpg",
-            intro: "Kesenian rakyat yang menggunakan properti kuda kepang dan menjadi bagian dari tradisi pertunjukan masyarakat.",
-            description: "Ebleg dikenal sebagai kesenian rakyat yang menampilkan penari, properti berbentuk kuda, iringan musik, dan gerak yang dinamis. Bentuk pertunjukan dapat berbeda sesuai kelompok pelestari dan daerahnya.",
-            history: "Ebleg hidup melalui tradisi pertunjukan dan keterlibatan kelompok seni masyarakat. Agar sejarah asal-usul yang lebih khusus untuk Ebleg Kebumen tidak keliru, informasi tentang pendiri, masa kemunculan, dan perkembangan kelompok sebaiknya dilengkapi melalui wawancara dengan pelaku seni atau sumber kebudayaan setempat.",
-            highlights: "Properti kuda kepang, kostum, iringan musik, dan interaksi penari menjadi unsur yang mudah dikenali dalam pertunjukan.",
-            note: "Pertunjukan Ebeg umumnya diiringi oleh gamelan atau calung yang terdiri atas 6-20 orang penari. Ada tiga babak dalam pertunjukan ini yaitu tari-tarian, janturan dan gapetan yang dipimpin oleh seorang dalang/penimbul. Pada sesi janturan para penari mengalami kerasukan dengan tingkat yang berbeda beda dan proses pengembaliannya dilakukan oleh penimbul.",
-            source: "https://www.kebumenkab.go.id/index.php/web/post/detail/53"
-        },
-        sate: {
-            title: "Sate Ambal", category: "Kuliner",
-            image: "images/makanan1.jpg",
-            intro: "Kuliner khas dari kawasan Ambal yang dikenal dengan racikan bumbu dan cara penyajian yang khas.",
-            description: "Sate Ambal merupakan salah satu makanan yang identik dengan Kabupaten Kebumen. Daging sate disajikan dengan bumbu khas yang membedakannya dari sejumlah jenis sate lain.",
-            history: "Sate Ambal tumbuh sebagai kuliner daerah yang dikenal dari kawasan Ambal. Resep dan cara pengolahan diwariskan melalui penjual serta keluarga, sehingga detail racikan bisa berbeda antarwarung. Kisah pendirian penjual tertentu sebaiknya merujuk pada sejarah usaha masing-masing.",
-            highlights: "Ciri yang sering dikenali adalah bumbu berwarna kecokelatan dengan bahan dasar tempe dan rasa gurih-manis. Kuliner ini menjadi salah satu pilihan yang dicari saat mengenal makanan khas Kebumen.",
-            note: "Cara pembuatan Sate Ambal sama dengan sate dari daerah lainnya di Indonesia. Daging ayam dipotong-potong dan ditusukan ke tusuk sate. Sebelum dibakar, semua bumbu awal yang dihaluskan akan dilumurkan ke daging ayam yang sudah dipotong. Diamkan selama minimal 2 jam sampai bumbunya meresap dan sate pun siap dibakar seperti biasa. Pembakaran dengan arang batok kelapa selama 3 sampai 5 menit hingga matang sempurna.",
-            source: "https://www.kebumenkab.go.id/index.php/web/article/detail/166"
-        },
-        lanting: {
-            title: "Lanting", category: "Kuliner",
-            image: "images/makanan2.jpg",
-            intro: "Camilan berbahan singkong yang populer sebagai jajanan dan oleh-oleh dari Kebumen.",
-            description: "Lanting dibuat dari singkong yang diolah menjadi adonan, dibentuk, kemudian digoreng hingga renyah. Bentuknya sering menyerupai angka delapan atau lingkaran kecil.",
-            history: "Lanting berkembang sebagai makanan olahan singkong di wilayah Kebumen dan sekitarnya. Seperti banyak camilan tradisional, pembuatannya diwariskan melalui usaha rumahan dan produsen lokal. Sejarah pasti kemunculan lanting memerlukan sumber khusus dari sentra produksinya.",
-            highlights: "Lanting memiliki tekstur renyah dan tersedia dalam beragam rasa. Produk ini juga menjadi contoh bagaimana bahan pangan lokal diolah menjadi usaha kuliner.",
-            note: "Lanthing atau klanthing adalah camilan semacam kerupuk yang terbuat dari adonan singkong. Camilan ini berbentuk angka delapan atau lingkaran kecil seperti cincin, yang tersedia dalam banyak rasa.",
-            source: "https://www2.kebumenkab.go.id/index.php/web/post/detail/52"
-        },
-        penggel: {
-            title: "Nasi Penggel", category: "Kuliner",
-            image: "images/makanan3.jpg",
-            intro: "Sajian nasi berbentuk bulat kecil yang biasa dinikmati bersama lauk dan sayur berkuah.",
-            description: "Nasi Penggel adalah kuliner khas Kebumen yang umumnya disajikan dalam bentuk kepalan nasi kecil, ditemani sayur nangka atau gulai dan lauk seperti kikil maupun jeroan sesuai penjual.",
-            history: "Nasi Penggel dikenal sebagai bagian dari tradisi makan masyarakat Kebumen, terutama sebagai menu sarapan. Resep keluarga dan cara penyajian diwariskan antargenerasi. Riwayat pencipta pertama atau tahun kemunculannya tidak dinyatakan di sini karena memerlukan sumber sejarah kuliner yang lebih spesifik.",
-            highlights: "Bentuk nasi yang bulat kecil dan sajian dengan kuah gurih menjadi ciri yang mudah dikenali. Pengalaman rasa dapat berbeda sesuai racikan penjual.",
-            note: "Nasi Penggel adalah makanan khas dari daerah Kabupaten Kebumen, Jawa Tengah, Indonesia. Penamaan Nasi Penggel berarti mengambil nasi yang dibentuk bulat-bulat seukuran bola pingpong. Nasi Penggel itu bermakna nasi yang dibulati. Nasi Penggel biasa diwadahi dengan daun pisang yang dibentuk ‘pincuk’. Biasanya pembeli akan mengambil 8-15 bulatan nasi. Bulatan Nasi Penggel ini diletakkan dalam bakul yang ditata berlapis-lapis. Setiap lapisan Nasi Penggel akan dipisahkan dengan lembaran daun pisang.",
-            source: "https://visitjawatengah.jatengprov.go.id/id/regency/kabupaten-kebumen/kuliner/nasi-penggel"
-        },
-        jipang: {
-            title: "Jipang Kacang", category: "Kuliner",
-            image: "images/makanan4.jpg",
-            intro: "Jajanan tradisional yang memadukan kacang dengan pemanis hingga membentuk camilan padat dan renyah.",
-            description: "Jipang kacang merupakan jajanan tradisional berbahan kacang yang disatukan dengan larutan gula atau pemanis. Camilan ini cocok dinikmati sebagai kudapan dan dikenal dalam ragam jajanan rumahan.",
-            history: "Jajanan berbahan kacang dan gula telah lama dibuat sebagai camilan rumahan di berbagai daerah. Untuk riwayat khusus Jipang Kacang Kebumen, seperti asal desa atau perintisnya, informasi perlu dikonfirmasi kepada produsen lokal agar tidak mencampur cerita dari daerah lain.",
-            highlights: "Perpaduan rasa manis dan kacang menjadi daya tarik utamanya. Bentuk, tekstur, dan resep dapat berbeda sesuai pembuatnya.",
-            note: "Para perajin masih mengerjakan proses pembuatan jipang kacang secara tradisional. Persis seperti yang diajarkan nenek moyang dulu. Hanya ada perubahan pada bungkusnya. Kalau zaman dulu menggunakan klaras (daun pisang kering), kini menggunakan bungkus plastik.",
-            source: "https://www2.kebumenkab.go.id/index.php/web/post/detail/52"
-        },
-        benteng: {
-            title: "Benteng Van der Wijck", category: "Sejarah",
-            image: "images/sejarahkota.jpg",
-            intro: "Bangunan benteng bersejarah di Gombong yang dikenal dengan arsitektur bata merahnya.",
-            description: "Benteng Van der Wijck terletak di Gombong, Kabupaten Kebumen. Bangunan ini menjadi salah satu peninggalan sejarah yang dikenal masyarakat dan sering dikunjungi untuk melihat arsitektur serta mengenal masa lalu kawasan tersebut.",
-            history: "Benteng ini berkaitan dengan periode kolonial Hindia Belanda. Detail tentang fungsi awal, perubahan penggunaan, dan sejarah bangunannya sebaiknya dibaca melalui sumber sejarah atau informasi pengelola agar kronologi yang ditampilkan tetap akurat.",
-            highlights: "Bentuk bangunan dan susunan bata merah menjadi ciri visual yang menonjol. Kawasan ini juga dapat menjadi titik awal untuk mempelajari sejarah Gombong dan Kebumen.",
-            note: "Benteng ini kadang dihubungkan dengan nama Frans David Cochius (1787-1876), seorang Jenderal yang bertugas di daerah barat Bagelen yang namanya juga diabadikan menjadi nama Benteng Generaal Cochius. Benteng ini merupakan benteng persegi delapan satu-satunya di Indonesia",
-            source: "https://www.kebumenkab.go.id/"
-        },
-        sejarah: {
-            title: "Jejak Sejarah Kebumen", category: "Sejarah",
-            image: "images/sejarahkota2.jpg",
-            intro: "Mengenal perjalanan daerah melalui arsip, bangunan, kisah masyarakat, dan perubahan kehidupan dari masa ke masa.",
-            description: "Sejarah Kebumen terbentuk melalui perkembangan permukiman, pemerintahan, perdagangan, pendidikan, dan kehidupan masyarakat. Foto arsip dapat membantu pengunjung membandingkan suasana daerah pada masa lalu dengan kondisi sekarang.",
-            history: "Sejarah suatu kabupaten tidak berasal dari satu peristiwa saja. Untuk menyusun kronologi yang tepat, gunakan arsip pemerintah, dokumen sejarah, museum, dan sumber lokal yang mencantumkan tanggal serta konteks gambar.",
-            highlights: "Sebelum dikenal sebagai Kebumen, Panjer telah tercatat dalam sejarah nasional sebagai salah satu daerah yang berperan penting dalam penyerbuan pasukan Sultan Agung ke Batavia pada tahun 1629 untuk melawan VOC Belanda.",
-            note: "Sebagai bentuk penghargaan terhadap nilai sejarah tersebut, Pemerintah Kabupaten Kebumen menetapkan 21 Agustus 1629 sebagai Hari Jadi Kabupaten Kebumen melalui Peraturan Daerah Kabupaten Kebumen Nomor 3 Tahun 2018",
-            source: "https://www.kebumenkab.go.id/"
-        },
-        geopark: {
-            title: "Geopark Kebumen", category: "Alam dan warisan geologi",
-            image: "images/geopark.jpg",
-            intro: "Kawasan yang memperlihatkan kekayaan geologi dan kisah panjang pembentukan bentang alam Kebumen.",
-            description: "Kawasan geopark menghubungkan warisan geologi dengan lingkungan, keanekaragaman hayati, serta kehidupan masyarakat. Bentang alam Kebumen menyimpan batuan dan struktur geologi yang membantu menjelaskan sejarah bumi.",
-            history: "Batuan dan bentang alam terbentuk melalui proses geologi yang berlangsung sangat lama, termasuk pengendapan, perubahan tektonik, dan pengangkatan. Penjelasan tiap lokasi geologi perlu disesuaikan dengan situs yang benar-benar ditampilkan pada foto.",
-            highlights: "Geopark dapat menjadi ruang belajar mengenai bumi sekaligus mendorong pariwisata yang memperhatikan konservasi dan manfaat bagi masyarakat lokal.",
-            note: "Lebih dari sekadar destinasi wisata, Geopark Kebumen menjadi ruang konservasi, edukasi, dan pemberdayaan masyarakat. Kawasan ini mengusung konsep pembangunan berkelanjutan yang bertujuan menjaga kelestarian lingkungan sekaligus meningkatkan kesejahteraan masyarakat lokal.",
-            source: "https://www.kebumenkab.go.id/"
-        },
-        karangbolong: {
-            title: "Pantai Karangbolong", category: "Wisata alam",
-            image: "images/karangbolong.png",
-            intro: "Pantai dengan tebing karang, garis pesisir, dan lanskap yang memperlihatkan karakter pantai selatan Kebumen.",
-            description: "Pantai Karangbolong berada di kawasan Kecamatan Buayan. Nama Karangbolong merujuk pada bentang karang berlubang yang menjadi ciri kawasan ini. Pemandangan laut, batuan, dan vegetasi pesisir menjadikannya tempat menarik untuk mengenali lanskap selatan Jawa.",
-            history: "Karangbolong dikenal bukan hanya karena pemandangan pantainya, tetapi juga karena tradisi lokal yang tumbuh di sekitarnya. Kawasan ini sering dikaitkan dengan sejarah pemanfaatan sarang burung walet di gua-gua karang. Cerita lisan setempat dapat memiliki beberapa versi, sehingga detail legenda sebaiknya dikonfirmasi kepada warga dan pengelola.",
-            highlights: "Nikmati pemandangan tebing dan laut dari area yang diizinkan. Perhatikan perubahan cuaca, ombak, dan permukaan batu yang dapat licin.",
-            note: "Lokasi: kawasan Karangbolong, Kecamatan Buayan, Kabupaten Kebumen. Ikuti petunjuk keselamatan dan jangan mendekati tepi tebing yang tidak berpagar.",
-            source: "https://www.kebumenkab.go.id/"
-        },
-        logending: {
-            title: "Pantai Logending", category: "Wisata alam",
-            image: "images/logending.jpeg",
-            intro: "Kawasan pantai dan muara yang mempertemukan suasana pesisir dengan aktivitas perahu nelayan.",
-            description: "Pantai Logending terletak di wilayah Ayah, Kebumen. Selain menikmati pemandangan laut, pengunjung dapat melihat lingkungan muara dan aktivitas masyarakat pesisir. Suasana pantai dapat berubah mengikuti pasang surut, cuaca, dan kegiatan nelayan.",
-            history: "Logending tumbuh sebagai ruang hidup masyarakat pesisir sekaligus tujuan rekreasi. Muara dan laut di sekitarnya berkaitan dengan mata pencaharian warga, terutama aktivitas perikanan. Untuk riwayat nama dan perkembangan kawasan secara terperinci, keterangan pemerintah desa atau pengelola setempat merupakan rujukan yang paling sesuai.",
-            highlights: "Pemandangan perahu, muara, garis pantai, dan pepohonan pesisir menjadi daya tariknya. Hormati aktivitas nelayan dan jangan menghalangi jalur perahu.",
-            note: "Lokasi: kawasan Ayah, Kabupaten Kebumen. Periksa kondisi cuaca dan ikuti arahan pengelola saat berada di tepi air.",
-            source: "https://www.kebumenkab.go.id/"
-        },
-        petanahan: {
-            title: "Pantai Petanahan", category: "Wisata alam",
-            image: "images/petanahan.jpg",
-            intro: "Pantai berpasir luas dengan cakrawala terbuka dan suasana khas pesisir selatan.",
-            description: "Pantai Petanahan berada di Kecamatan Petanahan. Hamparan pasir dan garis pantainya menjadi ruang rekreasi bagi warga maupun wisatawan. Kawasan pesisir juga memperlihatkan hubungan antara lingkungan pantai, kegiatan ekonomi, dan kehidupan masyarakat sekitar.",
-            history: "Pantai Petanahan telah lama menjadi bagian dari lanskap dan kehidupan masyarakat pesisir. Perkembangan sebagai tempat rekreasi berjalan berdampingan dengan aktivitas warga setempat. Informasi tentang peristiwa atau tradisi tertentu sebaiknya disertai sumber lokal agar kisah sejarah tidak tercampur dengan legenda yang belum terverifikasi.",
-            highlights: "Cocok untuk menikmati pemandangan laut, berjalan di pantai, dan melihat suasana pesisir. Hindari berenang jika ombak kuat atau terdapat larangan dari petugas.",
-            note: "Lokasi: Kecamatan Petanahan, Kabupaten Kebumen. Jaga kebersihan pantai dan patuhi papan peringatan keselamatan.",
-            source: "https://www.kebumenkab.go.id/"
-        },
-        watubale: {
-            title: "Watu Bale", category: "Wisata alam",
-            image: "images/watubale.jpg",
-            intro: "Titik pandang pesisir dengan panorama laut lepas, perbukitan, dan formasi batuan yang dramatis.",
-            description: "Watu Bale dikenal sebagai destinasi untuk menikmati panorama pantai dari ketinggian. Perpaduan bukit, batuan, dan laut membuat tempat ini menarik untuk fotografi dan menikmati bentang alam Kebumen dari sudut pandang berbeda.",
-            history: "Daya tarik Watu Bale terutama berkaitan dengan bentang alam pesisir dan pemanfaatannya sebagai lokasi wisata. Nama tempat dan cerita lokalnya merupakan bagian dari identitas kawasan; penjelasan tentang asal-usul nama secara lebih khusus perlu dikonfirmasi melalui sumber masyarakat atau pengelola setempat.",
-            highlights: "Pemandangan laut dan kontur bukit menjadi daya tarik utama. Gunakan jalur yang tersedia, berhati-hati di area tinggi, dan jangan melewati pembatas demi mengambil foto.",
-            note: "Lokasi: kawasan pesisir selatan Kebumen. Fasilitas dan akses dapat berubah; periksa informasi pengelola sebelum berkunjung.",
-            source: "https://www.kebumenkab.go.id/"
-        },
-        pecaron: {
-            title: "Pantai Pecaron", category: "Wisata alam",
-            image: "images/pecaron.webp",
-            intro: "Pantai yang menawarkan suasana lebih alami, dengan pasir, pepohonan, dan lanskap pesisir yang tenang.",
-            description: "Pantai Pecaron berada di kawasan pesisir Kecamatan Ayah. Bentang pantainya dikelilingi lingkungan hijau dan perbukitan, menghadirkan suasana yang berbeda dari pantai wisata yang lebih ramai. Kondisi jalan dan fasilitas dapat berubah, jadi sebaiknya cek informasi terbaru sebelum berangkat.",
-            history: "Pecaron merupakan bagian dari bentang pesisir selatan Kebumen yang membentuk kehidupan masyarakat setempat. Cerita mengenai nama, pemanfaatan pantai, dan perkembangan kunjungan wisata lebih tepat dilengkapi melalui wawancara warga atau keterangan pengelola agar narasi sejarah tetap akurat.",
-            highlights: "Nikmati suasana alam dan pemandangan garis pantai. Bawa kembali sampah, hormati area milik warga, dan waspadai ombak serta perubahan cuaca.",
-            note: "Lokasi: kawasan Ayah, Kabupaten Kebumen. Foto yang digunakan adalah images/pecaron.webp; bukan berkas pecaron.jxl.",
-            source: "https://www.kebumenkab.go.id/"
-        },
-        kebumen: {
-            title: "Kebumen Hari Ini", category: "Kehidupan lokal",
-            image: "images/wisata4.jpg",
-            intro: "Melihat Kebumen sebagai daerah yang terus berkembang dengan kehidupan masyarakat dan potensi lokalnya.",
-            description: "Kabupaten Kebumen memiliki kehidupan sosial dan ekonomi yang beragam, mulai dari kegiatan pertanian dan usaha lokal hingga pariwisata serta layanan publik. Perubahan daerah dapat dilihat melalui ruang publik, fasilitas, dan aktivitas masyarakat.",
-            history: "Kondisi Kebumen hari ini merupakan bagian dari perjalanan panjang daerah. Untuk menampilkan perubahan secara historis, bandingkan foto lama dan baru yang memiliki lokasi sama serta sertakan tahun pengambilan gambar.",
-            highlights: "Potensi lokal dapat dikenalkan melalui kegiatan masyarakat, produk usaha, kawasan wisata, dan pelestarian budaya. Foto yang diberi keterangan lokasi dan tahun akan membantu pengunjung memahami konteksnya.",
-            note: "Seperti Contoh bendungan sempor,Kecamatan Sempor memiliki kondisi geografi berupa lembah dan perbukitan yang merupakan bagian dari Pegunungan Serayu Selatan. Ketinggian rata-rata Kecamatan Sempor adalah 140 meter di atas permukaan air laut. ",
-            source: "https://www.kebumenkab.go.id/"
+            <span
+                class="back-top"
+                id="backTop"
+            >
+                Kembali ke atas ↑
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /*
+        ============================================================
+        DATA DESTINASI
+        ============================================================
+        */
+
+        const destinations = {
+
+            /* =====================================================
+               WISATA
+            ===================================================== */
+
+            menganti: {
+                title: "Pantai Menganti",
+                category: "Wisata",
+                image: "images/wisata1.jpg",
+                location: "Desa Karangduwur, Kecamatan Ayah",
+
+                intro:
+                    "Pantai dengan pasir putih yang berada di kawasan perbukitan pesisir selatan Kebumen.",
+
+                description:
+                    "Pantai Menganti merupakan salah satu destinasi pesisir yang menjadi bagian penting dari kawasan wisata selatan Kebumen. Pantai ini berada di Desa Karangduwur, Kecamatan Ayah, dengan karakter lanskap berupa perpaduan pasir pantai, tebing, perbukitan, dan hamparan Samudra Hindia. Dari beberapa titik ketinggian, pengunjung dapat menikmati garis pantai dan bentang alam di sekitarnya.",
+
+                history:
+                    "Perkembangan Pantai Menganti sebagai tujuan wisata tidak terlepas dari potensi alam kawasan pesisir Ayah. Keindahan pantai dan perbukitan di sekitarnya kemudian dikembangkan menjadi kawasan wisata yang tidak hanya menawarkan pemandangan, tetapi juga ruang untuk aktivitas luar ruangan. Posisi Menganti dalam kawasan wisata pesisir selatan membuatnya menjadi salah satu tempat yang sering dijadikan tujuan untuk menikmati lanskap Kebumen dari ketinggian.",
+
+                highlights: [
+                    {
+                        title: "Pasir putih dan perbukitan",
+                        text: "Perpaduan pantai berpasir dengan perbukitan membuat karakter lanskap Menganti berbeda dari banyak pantai lain di Kebumen."
+                    },
+                    {
+                        title: "Tanjung Karangbrata",
+                        text: "Area ketinggian di sekitar Tanjung Karangbrata memberikan sudut pandang luas ke arah laut dan pantai."
+                    },
+                    {
+                        title: "Pemandangan matahari",
+                        text: "Bentang laut terbuka membuat kawasan ini menarik untuk menikmati perubahan warna langit menjelang sore."
+                    },
+                    {
+                        title: "Aktivitas wisata",
+                        text: "Kawasan Menganti juga berkembang dengan aktivitas seperti camping, kuliner, spot foto, dan kegiatan luar ruangan."
+                    }
+                ],
+
+                note:
+                    "Perhatikan kondisi cuaca dan ombak ketika berkunjung. Untuk aktivitas di kawasan pantai, tetap ikuti arahan pengelola dan jangan memaksakan diri mendekati laut ketika kondisi tidak aman.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen; Pemerintah Kabupaten Kebumen."
+            },
+
+
+            suwuk: {
+                title: "Pantai Suwuk",
+                category: "Wisata",
+                image: "images/wisata2.jpg",
+                location: "Desa Tambakmulyo, Kecamatan Puring",
+
+                intro:
+                    "Pantai pesisir selatan Kebumen yang menawarkan suasana laut terbuka dan bentang pantai yang luas.",
+
+                description:
+                    "Pantai Suwuk berada di Desa Tambakmulyo, Kecamatan Puring. Kawasan ini dikenal sebagai salah satu destinasi pantai di wilayah barat daya Kebumen. Karakter pantainya berupa hamparan pasir dan laut terbuka yang memberikan ruang untuk menikmati suasana pesisir bersama keluarga maupun teman.",
+
+                history:
+                    "Pantai Suwuk berkembang sebagai salah satu tujuan wisata pesisir di Kecamatan Puring. Keberadaannya menjadi bagian dari rangkaian destinasi pantai yang berada di sepanjang pesisir selatan Kebumen. Perkembangan kawasan wisata membuat Pantai Suwuk tidak hanya menjadi tempat masyarakat menikmati laut, tetapi juga bagian dari aktivitas ekonomi dan pariwisata lokal.",
+
+                highlights: [
+                    {
+                        title: "Bentang pantai luas",
+                        text: "Area pantai memberikan ruang cukup luas untuk berjalan-jalan dan menikmati suasana pesisir."
+                    },
+                    {
+                        title: "Suasana keluarga",
+                        text: "Kawasan pantai cocok digunakan sebagai tempat rekreasi santai bersama keluarga."
+                    },
+                    {
+                        title: "Laut selatan",
+                        text: "Pemandangan langsung ke Samudra Hindia menjadi karakter utama kawasan ini."
+                    },
+                    {
+                        title: "Bagian dari wisata Puring",
+                        text: "Lokasinya berada dalam kawasan pesisir Puring yang memiliki beberapa destinasi pantai lainnya."
+                    }
+                ],
+
+                note:
+                    "Ombak pantai selatan dapat berubah dengan cepat. Hindari berenang di area yang dilarang dan selalu ikuti petunjuk keselamatan dari pengelola.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            jatijajar: {
+                title: "Goa Jatijajar",
+                category: "Wisata",
+                image: "images/wisata3.jpg",
+                location: "Desa Jatijajar, Kecamatan Ayah",
+
+                intro:
+                    "Goa alam yang menjadi salah satu destinasi wisata ikonik Kebumen dengan lorong dan bentang batu kapur.",
+
+                description:
+                    "Goa Jatijajar terletak di Desa Jatijajar, Kecamatan Ayah. Goa ini memiliki ruang dan lorong bawah tanah yang terbentuk melalui proses alam dalam waktu yang panjang. Kawasan wisata Jatijajar juga menjadi salah satu tujuan edukasi karena pengunjung dapat melihat secara langsung karakter batuan dan bentuk ruang alami di dalam goa.",
+
+                history:
+                    "Goa Jatijajar telah lama dikenal sebagai salah satu tujuan wisata utama Kebumen. Keberadaannya menjadi bagian dari perkembangan pariwisata daerah dan terus dikelola sebagai kawasan wisata alam. Selain nilai rekreasinya, goa juga memiliki nilai edukasi karena memperlihatkan proses pembentukan bentang alam karst.",
+
+                highlights: [
+                    {
+                        title: "Lorong goa",
+                        text: "Bagian dalam goa memperlihatkan bentuk lorong dan ruang batuan yang terbentuk secara alami."
+                    },
+                    {
+                        title: "Bentang karst",
+                        text: "Goa menjadi contoh bagaimana proses geologi membentuk kawasan karst di selatan Kebumen."
+                    },
+                    {
+                        title: "Wisata edukasi",
+                        text: "Pengunjung dapat mengenal proses alam sekaligus menikmati pengalaman menjelajah kawasan goa."
+                    },
+                    {
+                        title: "Kawasan wisata",
+                        text: "Jatijajar dikembangkan sebagai kawasan wisata yang memiliki berbagai fasilitas untuk pengunjung."
+                    }
+                ],
+
+                note:
+                    "Gunakan alas kaki yang nyaman dan ikuti jalur yang telah disediakan. Jangan menyentuh atau merusak formasi batuan di dalam goa.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            sempor: {
+                title: "Waduk Sempor",
+                category: "Wisata",
+                image: "images/wisata.jpg",
+                location: "Desa Sempor, Kecamatan Sempor",
+
+                intro:
+                    "Waduk dengan lanskap perbukitan dan perairan yang menjadi bagian penting dari kehidupan masyarakat sekitar.",
+
+                description:
+                    "Waduk Sempor terletak di Desa Sempor, Kecamatan Sempor. Selain berfungsi sebagai bagian dari infrastruktur pengelolaan air dan irigasi, kawasan waduk memiliki pemandangan perairan dan perbukitan yang menarik untuk dinikmati. Suasana yang lebih tenang dibandingkan kawasan perkotaan menjadikannya salah satu pilihan untuk menikmati lanskap Kebumen.",
+
+                history:
+                    "Waduk Sempor memiliki fungsi penting dalam pengelolaan sumber daya air dan mendukung kebutuhan pertanian di wilayah sekitarnya. Seiring berkembangnya aktivitas wisata, kawasan waduk juga dikenal sebagai ruang rekreasi dengan pemandangan perairan dan perbukitan.",
+
+                highlights: [
+                    {
+                        title: "Pemandangan waduk",
+                        text: "Hamparan air yang dikelilingi perbukitan menciptakan panorama yang khas."
+                    },
+                    {
+                        title: "Fungsi irigasi",
+                        text: "Waduk memiliki peran penting dalam mendukung kebutuhan air dan pertanian wilayah sekitar."
+                    },
+                    {
+                        title: "Suasana tenang",
+                        text: "Kawasan ini dapat menjadi pilihan untuk menikmati suasana alam yang lebih jauh dari keramaian kota."
+                    },
+                    {
+                        title: "Lanskap perbukitan",
+                        text: "Kontur perbukitan di sekitar waduk menjadi bagian penting dari pemandangan kawasan."
+                    }
+                ],
+
+                note:
+                    "Tetap berhati-hati di sekitar tepi perairan dan gunakan area yang memang diperuntukkan bagi pengunjung.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            bopong: {
+                title: "Pantai Bopong",
+                category: "Wisata",
+                image: "images/bopong.jpeg",
+                location: "Desa Surorejan, Kecamatan Puring",
+
+                intro:
+                    "Pantai di kawasan Puring yang memiliki karakter pasir gelap serta lingkungan pesisir yang masih kuat.",
+
+                description:
+                    "Pantai Bopong berada di Desa Surorejan, Kecamatan Puring. Pantai ini memiliki karakter pasir berwarna gelap dan kawasan pesisir yang menjadi habitat penting bagi satwa laut, termasuk penyu. Selain pemandangan laut, kawasan Bopong juga memiliki nilai konservasi yang membuatnya menarik untuk dikenali lebih jauh.",
+
+                history:
+                    "Pantai Bopong dikenal bukan hanya karena potensi wisata alamnya, tetapi juga karena kawasan pesisirnya pernah menjadi salah satu lokasi yang berkaitan dengan aktivitas pelestarian penyu. Kehadiran kegiatan konservasi menunjukkan bahwa wisata pesisir dapat berjalan berdampingan dengan upaya menjaga ekosistem.",
+
+                highlights: [
+                    {
+                        title: "Pasir gelap",
+                        text: "Warna pasir menjadi salah satu ciri visual yang membedakan Bopong dari pantai berpasir putih."
+                    },
+                    {
+                        title: "Konservasi penyu",
+                        text: "Kawasan ini memiliki kaitan dengan kegiatan pelestarian dan perlindungan penyu."
+                    },
+                    {
+                        title: "Ekosistem pesisir",
+                        text: "Pantai menjadi bagian dari lingkungan pesisir yang memiliki fungsi ekologis."
+                    },
+                    {
+                        title: "Suasana alami",
+                        text: "Bentang pantai memberikan pengalaman menikmati kawasan pesisir yang relatif terbuka."
+                    }
+                ],
+
+                note:
+                    "Pantai selatan memiliki ombak kuat. Jangan berenang di laut apabila kondisi tidak memungkinkan atau terdapat larangan dari pengelola.",
+
+                source:
+                    "Pemerintah Kabupaten Kebumen; Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            karangpenganten: {
+                title: "Pantai Karang Penganten",
+                category: "Wisata",
+                image: "images/karangpenganten.jpg",
+                location: "Desa Pasir, Kecamatan Ayah",
+
+                intro:
+                    "Pantai di kawasan pesisir Ayah yang menawarkan perpaduan pemandangan laut dan karakter perbukitan.",
+
+                description:
+                    "Pantai Karang Penganten berada di Desa Pasir, Kecamatan Ayah. Kawasan ini termasuk dalam rangkaian destinasi wisata pesisir selatan yang memiliki karakter bentang alam berupa laut, pantai, dan perbukitan. Posisi geografisnya membuat kawasan ini menjadi bagian dari lanskap wisata pesisir Ayah yang cukup beragam.",
+
+                history:
+                    "Pantai Karang Penganten berkembang sebagai bagian dari kawasan wisata pesisir Desa Pasir. Kawasan Ayah sendiri memiliki banyak destinasi pantai yang saling berdekatan dan membentuk rangkaian wisata alam di pesisir selatan Kebumen.",
+
+                highlights: [
+                    {
+                        title: "Pemandangan laut",
+                        text: "Laut selatan menjadi elemen utama yang memberikan karakter kuat pada kawasan pantai."
+                    },
+                    {
+                        title: "Perbukitan pesisir",
+                        text: "Kontur perbukitan membuat pemandangan kawasan lebih beragam."
+                    },
+                    {
+                        title: "Kawasan Pasir",
+                        text: "Lokasinya berada dalam wilayah Desa Pasir yang memiliki sejumlah destinasi pantai lain."
+                    },
+                    {
+                        title: "Suasana alami",
+                        text: "Bentang alam terbuka menjadi daya tarik utama untuk menikmati suasana pesisir."
+                    }
+                ],
+
+                note:
+                    "Perhatikan kondisi medan dan ombak. Gunakan jalur yang aman ketika berpindah dari area pantai menuju perbukitan.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            kaliratujogosimo: {
+                title: "Pantai Kaliratu Jogosimo",
+                category: "Wisata",
+                image: "images/kaliratujogosimo.webp",
+                location: "Desa Jogosimo, Kecamatan Klirong",
+
+                intro:
+                    "Destinasi pesisir yang memadukan wisata pantai dengan kegiatan konservasi penyu dan aktivitas masyarakat.",
+
+                description:
+                    "Pantai Kaliratu berada di Desa Jogosimo, Kecamatan Klirong. Kawasan ini tidak hanya menawarkan pemandangan pesisir, tetapi juga dikembangkan dengan aktivitas yang berkaitan dengan konservasi penyu dan kegiatan wisata berbasis masyarakat. Pengunjung dapat mengenal lingkungan pantai sekaligus melihat bagaimana kawasan pesisir dimanfaatkan untuk kegiatan edukasi.",
+
+                history:
+                    "Pengembangan Pantai Kaliratu Jogosimo berjalan dengan memanfaatkan potensi alam dan aktivitas masyarakat setempat. Salah satu nilai pentingnya adalah kegiatan konservasi penyu yang membuat wisata di kawasan ini memiliki unsur edukasi dan pelestarian lingkungan.",
+
+                highlights: [
+                    {
+                        title: "Konservasi penyu",
+                        text: "Kawasan ini memiliki kegiatan yang berkaitan dengan perlindungan dan pelestarian penyu."
+                    },
+                    {
+                        title: "Wisata edukasi",
+                        text: "Pengunjung dapat mengenal lingkungan pesisir melalui kegiatan berbasis konservasi."
+                    },
+                    {
+                        title: "Eksplorasi sungai",
+                        text: "Lingkungan sekitar memungkinkan adanya aktivitas wisata yang berkaitan dengan aliran sungai dan pesisir."
+                    },
+                    {
+                        title: "Kegiatan tradisional",
+                        text: "Kawasan ini juga dikaitkan dengan aktivitas masyarakat seperti jemparingan atau panahan tradisional."
+                    }
+                ],
+
+                note:
+                    "Jika mengikuti kegiatan konservasi, ikuti arahan pengelola agar aktivitas wisata tidak mengganggu habitat penyu.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            setrojenar: {
+                title: "Pantai Setrojenar",
+                category: "Wisata",
+                image: "images/setrojenar.jpg",
+                location: "Desa Setrojenar, Kecamatan Buluspesantren",
+
+                intro:
+                    "Pantai selatan dengan garis pantai panjang, pasir gelap, dan suasana yang cocok untuk menikmati sore.",
+
+                description:
+                    "Pantai Setrojenar berada di Desa Setrojenar, Kecamatan Buluspesantren. Kawasan ini memiliki hamparan pantai yang panjang dengan karakter pasir gelap dan pandangan langsung ke Samudra Hindia. Suasana pesisir dan aktivitas masyarakat nelayan menjadi bagian dari pengalaman ketika mengunjungi kawasan ini.",
+
+                history:
+                    "Setrojenar merupakan salah satu kawasan pesisir yang sejak lama memiliki hubungan dengan aktivitas masyarakat sekitar. Dalam perkembangannya, potensi pemandangan pantai dan suasana pesisir juga dimanfaatkan sebagai daya tarik wisata.",
+
+                highlights: [
+                    {
+                        title: "Pantai panjang",
+                        text: "Garis pantai yang panjang memberikan ruang untuk berjalan dan menikmati pemandangan laut."
+                    },
+                    {
+                        title: "Aktivitas nelayan",
+                        text: "Kehidupan masyarakat pesisir menjadi bagian dari karakter kawasan Setrojenar."
+                    },
+                    {
+                        title: "Pasir gelap",
+                        text: "Warna pasir memberikan karakter visual khas pada pantai."
+                    },
+                    {
+                        title: "Menikmati sore",
+                        text: "Pemandangan laut terbuka membuat kawasan ini menarik ketika cahaya sore mulai berubah."
+                    }
+                ],
+
+                note:
+                    "Tetap memperhatikan batas aman dari ombak dan hindari mendekati laut ketika kondisi gelombang sedang tinggi.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            mliwis: {
+                title: "Pantai Mliwis",
+                category: "Wisata",
+                image: "images/mliwis.jpeg",
+                location: "Desa Kenoyojayan, Kecamatan Ambal",
+
+                intro:
+                    "Pantai dengan pasir gelap, pepohonan pesisir, dan suasana yang nyaman untuk menikmati matahari sore.",
+
+                description:
+                    "Pantai Mliwis berada di kawasan Kecamatan Ambal, Kebumen. Pantai ini memiliki pasir berwarna gelap dan lingkungan yang dihiasi pepohonan pesisir. Selain menikmati pemandangan, kawasan Mliwis juga memiliki hubungan dengan aktivitas masyarakat yang memanfaatkan laut untuk mencari ikan.",
+
+                history:
+                    "Pantai Mliwis menjadi bagian dari perkembangan wisata pesisir Kecamatan Ambal. Potensi alam berupa garis pantai, pepohonan, dan aktivitas masyarakat menjadi unsur yang membentuk karakter kawasan wisata ini.",
+
+                highlights: [
+                    {
+                        title: "Pepohonan pesisir",
+                        text: "Pepohonan di sekitar pantai memberikan suasana yang lebih teduh dibandingkan area pantai terbuka."
+                    },
+                    {
+                        title: "Pasir gelap",
+                        text: "Karakter pasir menjadi salah satu ciri khas visual Pantai Mliwis."
+                    },
+                    {
+                        title: "Aktivitas nelayan",
+                        text: "Pengunjung dapat melihat kehidupan masyarakat yang masih berkaitan dengan aktivitas laut."
+                    },
+                    {
+                        title: "Pemandangan sore",
+                        text: "Kawasan pantai cocok untuk menikmati suasana menjelang matahari terbenam."
+                    }
+                ],
+
+                note:
+                    "Jaga kebersihan kawasan pantai dan jangan meninggalkan sampah setelah menikmati suasana pesisir.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            lagunalembupurwo: {
+                title: "Laguna Lembupurwo",
+                category: "Wisata",
+                image: "images/lagunalembupurwo.png",
+                location: "Desa Lembupurwo, Kecamatan Mirit",
+
+                intro:
+                    "Kawasan pesisir yang mempertemukan pemandangan pantai dengan laguna dan lingkungan sekitar yang khas.",
+
+                description:
+                    "Laguna Lembupurwo berada di Desa Lembupurwo, Kecamatan Mirit. Keunikan kawasan ini terletak pada keberadaan laguna yang berdampingan dengan lingkungan pantai. Perpaduan air, pasir, dan vegetasi membuat kawasan tersebut memiliki karakter lanskap yang berbeda dari pantai biasa.",
+
+                history:
+                    "Kawasan pantai dan laguna Lembupurwo berkembang sebagai salah satu potensi wisata alam di pesisir timur Kebumen. Keberadaan laguna menjadi bagian penting dari identitas kawasan dan menambah variasi bentang alam pesisir.",
+
+                highlights: [
+                    {
+                        title: "Laguna",
+                        text: "Keberadaan perairan laguna menjadi daya tarik utama yang membedakan kawasan ini."
+                    },
+                    {
+                        title: "Pantai dan air",
+                        text: "Pengunjung dapat melihat perpaduan antara lingkungan pantai dengan kawasan perairan laguna."
+                    },
+                    {
+                        title: "Bentang alam",
+                        text: "Kombinasi pasir, air, dan vegetasi menciptakan pemandangan yang beragam."
+                    },
+                    {
+                        title: "Wisata alam",
+                        text: "Kawasan ini cocok untuk mengenal karakter ekosistem pesisir Kebumen."
+                    }
+                ],
+
+                note:
+                    "Hormati kawasan alami di sekitar laguna dan jangan membuang sampah ke perairan.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            kembar: {
+                title: "Pantai Kembar Terpadu",
+                category: "Wisata",
+                image: "images/kembar.png",
+                location: "Desa Tambakmulyo, Kecamatan Puring",
+
+                intro:
+                    "Kawasan pantai yang menggabungkan wisata pesisir dengan kegiatan edukasi dan konservasi penyu.",
+
+                description:
+                    "Pantai Kembar Terpadu berada di Desa Tambakmulyo, Kecamatan Puring. Kawasan ini memiliki potensi wisata pantai sekaligus kegiatan yang berkaitan dengan perlindungan penyu. Konsep tersebut membuat pengalaman berkunjung tidak hanya berorientasi pada rekreasi, tetapi juga pengenalan terhadap pentingnya menjaga ekosistem pesisir.",
+
+                history:
+                    "Pantai Kembar berkembang dengan pendekatan yang menghubungkan potensi wisata alam dengan kegiatan konservasi. Aktivitas perlindungan penyu menjadi salah satu bagian penting dari identitas kawasan ini.",
+
+                highlights: [
+                    {
+                        title: "Konservasi penyu",
+                        text: "Kegiatan perlindungan penyu menjadi salah satu unsur penting di kawasan wisata."
+                    },
+                    {
+                        title: "Edukasi lingkungan",
+                        text: "Pengunjung dapat memperoleh pengalaman wisata sekaligus mengenal pentingnya menjaga habitat pesisir."
+                    },
+                    {
+                        title: "Wisata pantai",
+                        text: "Bentang pantai tetap menjadi daya tarik utama untuk menikmati suasana laut selatan."
+                    },
+                    {
+                        title: "Berbasis masyarakat",
+                        text: "Pengembangan kawasan menghubungkan kegiatan wisata dengan kehidupan masyarakat sekitar."
+                    }
+                ],
+
+                note:
+                    "Jangan mengganggu satwa atau area konservasi. Ikuti aturan ketika mengikuti kegiatan pelepasliaran atau edukasi penyu.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            lampon: {
+                title: "Pantai Lampon",
+                category: "Wisata",
+                image: "images/lampon.jpeg",
+                location: "Desa Pasir, Kecamatan Ayah",
+
+                intro:
+                    "Kawasan pesisir yang memadukan pantai, bukit, gua, dan area untuk menikmati alam dari ketinggian.",
+
+                description:
+                    "Pantai Lampon berada di Desa Pasir, Kecamatan Ayah. Kawasan ini memiliki karakter yang cukup beragam karena tidak hanya berupa pantai, tetapi juga terdapat perbukitan dan gua di lingkungan sekitarnya. Kombinasi tersebut membuat Lampon menarik bagi pengunjung yang menyukai wisata alam dan aktivitas luar ruangan.",
+
+                history:
+                    "Pantai Lampon berkembang sebagai bagian dari kawasan wisata pesisir Desa Pasir. Potensi alam berupa pantai, bukit, dan gua kemudian menjadi bagian dari pengalaman wisata yang ditawarkan kepada pengunjung.",
+
+                highlights: [
+                    {
+                        title: "Pantai dan bukit",
+                        text: "Perpaduan pantai dengan bukit menciptakan banyak sudut pandang terhadap laut."
+                    },
+                    {
+                        title: "Gua Wara Wari",
+                        text: "Gua menjadi salah satu unsur alam yang menambah variasi pengalaman ketika berada di kawasan Lampon."
+                    },
+                    {
+                        title: "Gua Celeng",
+                        text: "Keberadaan gua lainnya membuat kawasan ini memiliki karakter geologi dan lanskap yang menarik."
+                    },
+                    {
+                        title: "Camping",
+                        text: "Kawasan Lampon juga dikenal memiliki area yang dapat dimanfaatkan untuk kegiatan camping."
+                    }
+                ],
+
+                note:
+                    "Gunakan alas kaki yang sesuai jika menjelajah area berbukit atau gua dan selalu ikuti jalur yang aman.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            surumanis: {
+                title: "Pantai Surumanis",
+                category: "Wisata",
+                image: "images/surumanis.webp",
+                location: "Desa Pasir, Kecamatan Ayah",
+
+                intro:
+                    "Pantai yang berada di balik perbukitan kawasan Ayah dengan pemandangan laut dan karakter pesisir yang kuat.",
+
+                description:
+                    "Pantai Surumanis berada di Desa Pasir, Kecamatan Ayah. Kawasan ini memiliki karakter pantai yang berada di lingkungan perbukitan sehingga memberikan pengalaman berbeda dibandingkan pantai yang langsung terbuka dari jalan utama. Pemandangan laut dan kontur bukit menjadi bagian utama dari daya tariknya.",
+
+                history:
+                    "Surumanis merupakan salah satu dari rangkaian destinasi pantai di kawasan Desa Pasir. Potensi pemandangan pantai dan perbukitan kemudian dikembangkan menjadi bagian dari wisata alam pesisir selatan Kebumen.",
+
+                highlights: [
+                    {
+                        title: "Pantai di balik bukit",
+                        text: "Posisinya yang berada di lingkungan perbukitan membuat suasana pantai terasa lebih tersembunyi."
+                    },
+                    {
+                        title: "Pemandangan laut",
+                        text: "Dari beberapa titik kawasan dapat terlihat hamparan laut selatan."
+                    },
+                    {
+                        title: "Kontur perbukitan",
+                        text: "Perbukitan menjadi bagian penting dari karakter lanskap Pantai Surumanis."
+                    },
+                    {
+                        title: "Kawasan Pasir",
+                        text: "Surumanis berada dalam kawasan Desa Pasir yang memiliki sejumlah tujuan wisata alam lainnya."
+                    }
+                ],
+
+                note:
+                    "Perhatikan kondisi jalan dan medan ketika menuju kawasan pantai. Hindari berada di area rawan ketika cuaca buruk.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            /* =====================================================
+               BUDAYA
+            ===================================================== */
+
+            cepetan: {
+                title: "Tari Cepetan Alas",
+                category: "Budaya",
+                image: "images/budaya.jpg",
+                location: "Kecamatan Karanggayam",
+
+                intro:
+                    "Kesenian tradisional Kebumen yang memadukan gerak tari, drama, topeng, musik, dan cerita kehidupan masyarakat.",
+
+                description:
+                    "Tari Cepetan Alas merupakan kesenian tradisional yang berasal dari wilayah Karanggayam, Kebumen. Pertunjukan ini memiliki karakter yang kuat melalui penggunaan topeng dan gerakan yang dinamis. Cerita yang dibawakan berkaitan dengan kehidupan masyarakat pada masa pembukaan kawasan hutan dan berbagai kesulitan yang dihadapi masyarakat.",
+
+                history:
+                    "Kesenian Cepetan Alas berkembang di wilayah Karanggayam dan memiliki cerita yang berkaitan dengan masa pembukaan hutan sekitar tahun 1940-an. Dalam pertunjukannya, tokoh-tokoh menggunakan topeng dengan karakter tertentu dan diiringi musik tradisional. Kesenian ini kemudian terus diwariskan dan pada tahun 2021 ditetapkan sebagai salah satu Warisan Budaya Takbenda Indonesia.",
+
+                highlights: [
+                    {
+                        title: "Topeng karakter",
+                        text: "Penggunaan topeng menjadi ciri visual yang kuat dan membantu menggambarkan karakter dalam pertunjukan."
+                    },
+                    {
+                        title: "Cerita masyarakat",
+                        text: "Pertunjukan membawa cerita yang berhubungan dengan kehidupan dan pengalaman masyarakat Karanggayam."
+                    },
+                    {
+                        title: "Musik tradisional",
+                        text: "Pertunjukan menggunakan iringan musik tradisional yang mendukung suasana tari dan drama."
+                    },
+                    {
+                        title: "Warisan budaya",
+                        text: "Tari Cepetan Alas telah ditetapkan sebagai Warisan Budaya Takbenda Indonesia pada tahun 2021."
+                    }
+                ],
+
+                note:
+                    "Ketika menyaksikan pertunjukan budaya, hargai pemain, properti, serta aturan yang diterapkan oleh penyelenggara.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            lawet: {
+                title: "Tari Lawet",
+                category: "Budaya",
+                image: "images/budaya2.jpg",
+                location: "Kabupaten Kebumen",
+
+                intro:
+                    "Tari khas Kebumen yang mengambil inspirasi dari burung lawet dan kehidupan masyarakat pesisir.",
+
+                description:
+                    "Tari Lawet merupakan salah satu tari khas Kebumen yang mengambil inspirasi dari burung lawet atau burung walet. Gerakannya dibuat lincah dan menggambarkan karakter burung yang bergerak di udara. Tarian ini menjadi salah satu bentuk seni pertunjukan yang memperkenalkan identitas Kebumen melalui gerak dan musik.",
+
+                history:
+                    "Tari Lawet pertama kali dipentaskan pada tahun 1987. Gagasan tari berkaitan dengan burung lawet yang memiliki hubungan dengan cerita dan potensi kawasan pesisir Kebumen, termasuk tradisi pengunduhan sarang burung lawet. Seiring waktu, Tari Lawet menjadi salah satu tari yang sering ditampilkan dalam kegiatan budaya daerah.",
+
+                highlights: [
+                    {
+                        title: "Inspirasi burung lawet",
+                        text: "Gerakan tari menggambarkan kelincahan dan karakter burung lawet."
+                    },
+                    {
+                        title: "Gerakan dinamis",
+                        text: "Ragam geraknya dibuat ringan, cepat, dan ekspresif sehingga mudah dikenali ketika dipentaskan."
+                    },
+                    {
+                        title: "Identitas Kebumen",
+                        text: "Tari ini menjadi salah satu bentuk seni yang memperkenalkan cerita dan identitas daerah."
+                    },
+                    {
+                        title: "Pertunjukan budaya",
+                        text: "Tari Lawet dapat dijumpai dalam berbagai kegiatan seni dan acara budaya daerah."
+                    }
+                ],
+
+                note:
+                    "Nilai utama pertunjukan budaya bukan hanya pada hiburan, tetapi juga pada cerita dan identitas masyarakat yang diwariskan.",
+
+                source:
+                    "Pemerintah Kabupaten Kebumen; Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            batik: {
+                title: "Batik Kebumen",
+                category: "Budaya",
+                image: "images/batik.jpg",
+                location: "Kabupaten Kebumen",
+
+                intro:
+                    "Karya batik daerah yang menjadi bagian dari kerajinan, kreativitas, dan identitas budaya masyarakat Kebumen.",
+
+                description:
+                    "Batik Kebumen merupakan bagian dari kekayaan kerajinan daerah yang dikerjakan oleh masyarakat dan pelaku usaha batik. Setiap motif dapat membawa cerita, bentuk alam, maupun karakter lokal. Proses pembuatannya membutuhkan ketelitian karena pola harus dibuat dan diwariskan melalui keterampilan pembatik.",
+
+                history:
+                    "Tradisi membatik di Kebumen berkembang melalui komunitas dan sentra-sentra pengrajin. Perkembangannya tidak hanya mempertahankan teknik tradisional, tetapi juga mendorong munculnya motif dan variasi baru yang menyesuaikan kreativitas pembatik serta kebutuhan masyarakat.",
+
+                highlights: [
+                    {
+                        title: "Motif lokal",
+                        text: "Motif batik dapat mengangkat unsur lingkungan, alam, maupun simbol yang dekat dengan masyarakat Kebumen."
+                    },
+                    {
+                        title: "Kerajinan tangan",
+                        text: "Pembuatan batik membutuhkan ketelitian dan keterampilan yang tidak dapat dilakukan secara instan."
+                    },
+                    {
+                        title: "Ekonomi kreatif",
+                        text: "Batik juga menjadi bagian dari kegiatan ekonomi kreatif dan usaha masyarakat."
+                    },
+                    {
+                        title: "Warisan keterampilan",
+                        text: "Pengetahuan membatik terus diwariskan melalui proses belajar dari generasi ke generasi."
+                    }
+                ],
+
+                note:
+                    "Membeli produk batik lokal dapat menjadi salah satu cara sederhana untuk mendukung keberlanjutan pengrajin daerah.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            ebleg: {
+                title: "Ebleg Kebumen",
+                category: "Budaya",
+                image: "images/ebleg.jpg",
+                location: "Kabupaten Kebumen",
+
+                intro:
+                    "Kesenian tradisional dengan properti kuda kepang yang hidup dalam berbagai kegiatan masyarakat Kebumen.",
+
+                description:
+                    "Ebleg merupakan kesenian tradisional yang menggunakan properti berbentuk kuda kepang sebagai bagian utama pertunjukan. Gerakan penari, iringan musik, dan suasana pertunjukan membuat Ebleg memiliki karakter yang kuat sebagai seni pertunjukan rakyat.",
+
+                history:
+                    "Ebleg berkembang sebagai kesenian rakyat di wilayah Kebumen dan sekitarnya. Kesenian ini tumbuh melalui kelompok-kelompok seni masyarakat dan biasanya dipentaskan dalam acara tertentu, seperti perayaan, kegiatan desa, maupun agenda kebudayaan.",
+
+                highlights: [
+                    {
+                        title: "Kuda kepang",
+                        text: "Properti kuda kepang menjadi elemen utama yang langsung membentuk identitas visual Ebleg."
+                    },
+                    {
+                        title: "Musik tradisional",
+                        text: "Iringan musik menjadi bagian penting untuk membangun ritme dan suasana pertunjukan."
+                    },
+                    {
+                        title: "Seni rakyat",
+                        text: "Ebleg tumbuh dan dipelihara melalui kelompok seni yang berada di tengah masyarakat."
+                    },
+                    {
+                        title: "Pertunjukan langsung",
+                        text: "Pengalaman melihat Ebleg secara langsung memperlihatkan interaksi antara penari, musik, dan penonton."
+                    }
+                ],
+
+                note:
+                    "Hormati batas panggung dan arahan panitia karena pertunjukan kesenian tradisional dapat melibatkan gerakan yang dinamis.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            /* =====================================================
+               KULINER
+            ===================================================== */
+
+            sate: {
+                title: "Sate Ambal",
+                category: "Kuliner",
+                image: "images/makanan1.jpg",
+                location: "Desa Ambalresmi, Kecamatan Ambal",
+
+                intro:
+                    "Kuliner khas Kebumen berbahan dasar ayam dengan saus kacang berbumbu yang menjadi ciri khasnya.",
+
+                description:
+                    "Sate Ambal merupakan kuliner khas dari Kecamatan Ambal, Kebumen. Daging ayam dibumbui terlebih dahulu sebelum dibakar sehingga menghasilkan aroma dan rasa yang kuat. Ciri lain yang membedakannya adalah saus kacang berwarna kuning kecokelatan dengan racikan bumbu yang khas.",
+
+                history:
+                    "Sate Ambal berkembang sebagai kuliner masyarakat di wilayah Ambal dan kemudian dikenal lebih luas sebagai salah satu makanan khas Kebumen. Perkembangannya berjalan melalui warung dan usaha keluarga yang mempertahankan resep serta cara penyajian dari waktu ke waktu.",
+
+                highlights: [
+                    {
+                        title: "Bumbu ayam",
+                        text: "Daging ayam diberi bumbu sebelum dibakar sehingga rasa tidak hanya berasal dari saus."
+                    },
+                    {
+                        title: "Saus kacang khas",
+                        text: "Saus kacangnya memiliki karakter rasa dan warna yang berbeda dari saus sate pada umumnya."
+                    },
+                    {
+                        title: "Disajikan dengan ketupat",
+                        text: "Sate Ambal lazim dinikmati bersama ketupat sebagai pelengkap."
+                    },
+                    {
+                        title: "Identitas Ambal",
+                        text: "Nama kuliner ini melekat kuat dengan Kecamatan Ambal sebagai daerah asalnya."
+                    }
+                ],
+
+                note:
+                    "Kalau ingin mencoba, nikmati sate ketika masih hangat agar aroma bakaran dan bumbunya terasa lebih kuat.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            lanting: {
+                title: "Lanting",
+                category: "Kuliner",
+                image: "images/makanan4.jpg",
+                location: "Kabupaten Kebumen",
+
+                intro:
+                    "Camilan berbahan dasar singkong dengan bentuk khas dan tekstur renyah yang menjadi salah satu oleh-oleh Kebumen.",
+
+                description:
+                    "Lanting merupakan makanan ringan berbahan dasar singkong. Singkong diolah, diberi bumbu, kemudian dibentuk menjadi ukuran kecil dengan bentuk khas sebelum digoreng hingga renyah. Saat ini lanting tersedia dalam berbagai rasa sehingga mudah ditemukan sebagai camilan maupun oleh-oleh dari Kebumen.",
+
+                history:
+                    "Lanting berkembang sebagai produk olahan singkong masyarakat Kebumen. Proses pembuatannya menggunakan bahan yang sederhana dan teknik pengolahan yang diwariskan dalam usaha rumahan. Perkembangan selera konsumen kemudian membuat lanting hadir dengan lebih banyak variasi rasa.",
+
+                highlights: [
+                    {
+                        title: "Bahan singkong",
+                        text: "Bahan utama lanting adalah singkong yang diolah hingga menghasilkan tekstur renyah."
+                    },
+                    {
+                        title: "Bentuk khas",
+                        text: "Bentuk kecil menyerupai angka delapan atau cincin menjadi ciri yang mudah dikenali."
+                    },
+                    {
+                        title: "Banyak varian",
+                        text: "Lanting modern hadir dengan berbagai pilihan rasa dan bumbu."
+                    },
+                    {
+                        title: "Oleh-oleh Kebumen",
+                        text: "Lanting sering dibawa sebagai buah tangan karena praktis dan relatif mudah disimpan."
+                    }
+                ],
+
+                note:
+                    "Simpan lanting dalam wadah tertutup agar teksturnya tetap renyah.",
+
+                source:
+                    "Pemerintah Kabupaten Kebumen."
+            },
+
+
+            penggel: {
+                title: "Nasi Penggel",
+                category: "Kuliner",
+                image: "images/makanan3.jpg",
+                location: "Dukuh Gunungsari, Desa Pejagoan, Kecamatan Pejagoan",
+
+                intro:
+                    "Sarapan khas Kebumen berupa nasi berbentuk bulatan kecil yang disajikan bersama sayur dan lauk.",
+
+                description:
+                    "Nasi Penggel merupakan salah satu kuliner khas Kebumen yang memiliki bentuk penyajian unik. Nasi dibentuk menjadi bulatan-bulatan kecil kemudian disajikan menggunakan daun pisang sebagai pincuk. Hidangan ini biasanya ditemani sayur nangka muda, kikil atau kulit sapi, tahu, tempe, serta lauk pelengkap lainnya.",
+
+                history:
+                    "Nasi Penggel telah dikenal sebagai salah satu makanan khas masyarakat Kebumen, khususnya kawasan Pejagoan. Asal-usul awalnya tidak memiliki satu catatan sejarah yang benar-benar pasti, tetapi makanan ini telah lama menjadi bagian dari tradisi sarapan masyarakat dan terus dipertahankan oleh penjual lokal.",
+
+                highlights: [
+                    {
+                        title: "Nasi berbentuk bulat",
+                        text: "Nasi dibentuk menjadi bulatan kecil yang menjadi ciri paling mudah dikenali."
+                    },
+                    {
+                        title: "Pincuk daun pisang",
+                        text: "Penyajiannya menggunakan daun pisang sehingga memberikan aroma dan pengalaman makan yang khas."
+                    },
+                    {
+                        title: "Sayur nangka dan kikil",
+                        text: "Sayur nangka muda serta kikil menjadi pasangan yang umum ditemukan dalam satu porsi."
+                    },
+                    {
+                        title: "Menu sarapan",
+                        text: "Nasi Penggel dikenal luas sebagai makanan yang dinikmati pada pagi hari."
+                    }
+                ],
+
+                note:
+                    "Kalau ingin mencicipinya dalam suasana khas, datang pada pagi hari karena kuliner ini memang dikenal sebagai menu sarapan.",
+
+                source:
+                    "Pemerintah Kabupaten Kebumen; Kecamatan Pejagoan."
+            },
+
+
+            jipang: {
+                title: "Jipang Kacang",
+                category: "Kuliner",
+                image: "images/makanan2.jpg",
+                location: "Kabupaten Kebumen",
+
+                intro:
+                    "Camilan tradisional berbahan kacang yang memiliki rasa manis dan tekstur renyah.",
+
+                description:
+                    "Jipang kacang merupakan salah satu makanan tradisional yang menggunakan kacang sebagai bahan utama. Kacang dicampur dengan larutan gula sehingga menyatu dan membentuk tekstur padat ketika dingin. Camilan ini memiliki perpaduan rasa manis dan gurih yang sederhana tetapi khas.",
+
+                history:
+                    "Jipang berkembang sebagai makanan rumahan dan jajanan tradisional yang dibuat menggunakan bahan-bahan sederhana. Keberadaannya tetap dipertahankan melalui produksi skala rumah tangga dan usaha kecil yang menjadikannya sebagai salah satu pilihan oleh-oleh.",
+
+                highlights: [
+                    {
+                        title: "Kacang sebagai bahan utama",
+                        text: "Kacang memberikan rasa gurih dan tekstur renyah pada makanan."
+                    },
+                    {
+                        title: "Rasa manis",
+                        text: "Larutan gula menjadi perekat sekaligus memberikan karakter rasa pada jipang."
+                    },
+                    {
+                        title: "Tekstur renyah",
+                        text: "Kombinasi kacang dan gula menghasilkan tekstur yang padat dan renyah."
+                    },
+                    {
+                        title: "Jajanan tradisional",
+                        text: "Jipang menjadi contoh sederhana makanan tradisional yang masih bertahan di tengah perkembangan jajanan modern."
+                    }
+                ],
+
+                note:
+                    "Simpan di tempat kering dan tertutup agar tekstur jipang tetap renyah.",
+
+                source:
+                    "Pemerintah Kabupaten Kebumen."
+            },
+
+
+            /* =====================================================
+               SEJARAH & ALAM
+            ===================================================== */
+
+            benteng: {
+                title: "Benteng Van der Wijck",
+                category: "Sejarah",
+                image: "images/sejarahkota.jpg",
+                location: "Sidayu, Kecamatan Gombong",
+
+                intro:
+                    "Bangunan benteng peninggalan masa kolonial yang menjadi salah satu jejak sejarah penting di wilayah Gombong.",
+
+                description:
+                    "Benteng Van der Wijck merupakan bangunan bersejarah yang berada di wilayah Gombong. Benteng ini menjadi salah satu peninggalan arsitektur masa kolonial yang masih dapat dilihat hingga sekarang. Bentuk bangunan yang kokoh dan struktur ruangnya menjadi bagian penting dari pengalaman mengenal sejarah kawasan Gombong.",
+
+                history:
+                    "Benteng Van der Wijck berkaitan dengan periode pemerintahan kolonial Belanda di Jawa. Bangunan ini digunakan sebagai bagian dari sistem pertahanan dan kemudian mengalami perubahan fungsi dalam perjalanan sejarahnya. Saat ini benteng dikelola sebagai salah satu objek wisata sejarah dan menjadi ruang untuk mengenalkan peninggalan masa lalu kepada masyarakat.",
+
+                highlights: [
+                    {
+                        title: "Arsitektur benteng",
+                        text: "Struktur bangunan yang tebal dan kokoh memperlihatkan karakter arsitektur pertahanan pada masanya."
+                    },
+                    {
+                        title: "Jejak kolonial",
+                        text: "Benteng menjadi salah satu bukti fisik yang dapat digunakan untuk memahami sejarah masa kolonial."
+                    },
+                    {
+                        title: "Wisata sejarah",
+                        text: "Pengunjung dapat menikmati bangunan sekaligus mengenal perjalanan sejarah kawasan Gombong."
+                    },
+                    {
+                        title: "Kawasan Gombong",
+                        text: "Keberadaan benteng memperkuat identitas Gombong sebagai salah satu wilayah yang memiliki peninggalan sejarah."
+                    }
+                ],
+
+                note:
+                    "Hormati bangunan bersejarah dengan tidak mencoret, merusak, atau memindahkan bagian dari struktur yang masih dipertahankan.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen; Pemerintah Kabupaten Kebumen."
+            },
+
+
+            sejarah: {
+                title: "Jejak Sejarah Kebumen",
+                category: "Sejarah",
+                image: "images/sejarahkota2.jpg",
+                location: "Kabupaten Kebumen, Jawa Tengah",
+
+                intro:
+                    "Cerita tentang perkembangan Kebumen yang dapat ditelusuri melalui bangunan, kawasan, tradisi, dan peninggalan masa lalu.",
+
+                description:
+                    "Sejarah Kebumen tidak hanya tersimpan dalam satu bangunan atau satu tempat. Jejaknya dapat ditemukan melalui kawasan kota, bangunan lama, situs sejarah, tradisi masyarakat, serta berbagai peninggalan yang tersebar di sejumlah wilayah. Memahami jejak tersebut membantu melihat bagaimana Kebumen berkembang dari masa ke masa.",
+
+                history:
+                    "Perjalanan sejarah Kebumen berkaitan dengan perkembangan wilayah di Jawa Tengah bagian selatan, perubahan pemerintahan, aktivitas masyarakat, perdagangan, pertanian, hingga masa kolonial. Berbagai peninggalan yang masih ditemukan saat ini menjadi pengingat bahwa perkembangan daerah berlangsung melalui banyak periode dan melibatkan kehidupan masyarakat di dalamnya.",
+
+                highlights: [
+                    {
+                        title: "Bangunan bersejarah",
+                        text: "Beberapa bangunan lama menjadi bukti fisik perkembangan masyarakat dan pemerintahan pada masa lalu."
+                    },
+                    {
+                        title: "Tradisi masyarakat",
+                        text: "Tradisi lokal menjadi bagian dari sejarah sosial yang masih dapat ditemukan dalam kehidupan masyarakat."
+                    },
+                    {
+                        title: "Kawasan kota",
+                        text: "Perubahan kawasan perkotaan memperlihatkan bagaimana Kebumen berkembang mengikuti kebutuhan zaman."
+                    },
+                    {
+                        title: "Warisan masa lalu",
+                        text: "Peninggalan sejarah menjadi sumber pembelajaran agar generasi sekarang mengenal perjalanan daerahnya."
+                    }
+                ],
+
+                note:
+                    "Saat mengunjungi situs bersejarah, perlakukan bangunan dan benda peninggalan sebagai warisan yang perlu dijaga.",
+
+                source:
+                    "Pemerintah Kabupaten Kebumen; Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            geopark: {
+                title: "Geopark Kebumen",
+                category: "Sejarah",
+                image: "images/geopark.jpg",
+                location: "Kabupaten Kebumen, Jawa Tengah",
+
+                intro:
+                    "Kawasan dengan kekayaan geologi, bentang alam, ekosistem, dan budaya yang saling berhubungan.",
+
+                description:
+                    "Geopark Kebumen memperlihatkan hubungan antara kekayaan geologi dengan kehidupan masyarakat. Kawasannya mencakup berbagai bentang alam, mulai dari perbukitan, kawasan karst, gua, hingga pesisir selatan. Selain nilai geologi, kawasan geopark juga berkaitan dengan budaya, ekonomi masyarakat, pendidikan, dan upaya konservasi.",
+
+                history:
+                    "Gagasan geopark dikembangkan untuk menghubungkan perlindungan warisan geologi dengan pendidikan dan kesejahteraan masyarakat. Di Kebumen, berbagai situs geologi dan bentang alam kemudian dipandang sebagai satu kesatuan yang dapat dipelajari sekaligus dikembangkan melalui kegiatan wisata dan edukasi.",
+
+                highlights: [
+                    {
+                        title: "Kekayaan geologi",
+                        text: "Bentang alam Kebumen menyimpan berbagai karakter batuan dan proses geologi yang menarik untuk dipelajari."
+                    },
+                    {
+                        title: "Karst dan gua",
+                        text: "Wilayah selatan memiliki kawasan karst dengan gua dan bentang batuan yang terbentuk melalui proses alam."
+                    },
+                    {
+                        title: "Pesisir selatan",
+                        text: "Pantai dan tebing pesisir menjadi bagian dari kekayaan bentang alam Kebumen."
+                    },
+                    {
+                        title: "Edukasi dan konservasi",
+                        text: "Geopark tidak hanya berfungsi sebagai tujuan wisata, tetapi juga sebagai ruang pendidikan dan pelestarian."
+                    }
+                ],
+
+                note:
+                    "Jaga situs geologi dengan tidak mengambil batuan, merusak formasi alam, atau meninggalkan sampah di kawasan konservasi.",
+
+                source:
+                    "Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            },
+
+
+            kebumen: {
+                title: "Kebumen Hari Ini",
+                category: "Sejarah",
+                image: "images/wisata4.jpg",
+                location: "Kabupaten Kebumen, Jawa Tengah",
+
+                intro:
+                    "Gambaran Kebumen masa kini sebagai daerah yang terus berkembang dengan tetap membawa identitas alam dan budayanya.",
+
+                description:
+                    "Kebumen hari ini merupakan perpaduan antara kehidupan masyarakat, perkembangan ekonomi, pendidikan, pariwisata, budaya, dan lingkungan. Kabupaten ini memiliki wilayah yang cukup beragam, mulai dari kawasan perkotaan, pertanian, perbukitan, hingga pesisir selatan. Perkembangan tersebut berjalan berdampingan dengan upaya menjaga identitas lokal.",
+
+                history:
+                    "Perjalanan Kebumen dari masa ke masa membentuk karakter masyarakat dan wilayah seperti yang terlihat sekarang. Perubahan infrastruktur, pendidikan, teknologi, ekonomi, serta pariwisata terus memengaruhi kehidupan sehari-hari. Pada saat yang sama, tradisi, kuliner, kesenian, dan potensi alam tetap menjadi bagian penting dari identitas daerah.",
+
+                highlights: [
+                    {
+                        title: "Wisata alam",
+                        text: "Kebumen memiliki banyak destinasi berupa pantai, gua, waduk, bukit, dan bentang alam lainnya."
+                    },
+                    {
+                        title: "Budaya lokal",
+                        text: "Kesenian tradisional dan kerajinan menjadi bagian dari identitas masyarakat."
+                    },
+                    {
+                        title: "Kuliner khas",
+                        text: "Beragam makanan khas seperti Sate Ambal, Lanting, dan Nasi Penggel menjadi bagian dari cerita daerah."
+                    },
+                    {
+                        title: "Masyarakat yang berkembang",
+                        text: "Perkembangan pendidikan, teknologi, ekonomi, dan pariwisata terus membentuk wajah Kebumen masa kini."
+                    }
+                ],
+
+                note:
+                    "Mengenal Kebumen tidak hanya berarti mengunjungi tempat wisata, tetapi juga memahami masyarakat, budaya, makanan, dan cerita yang hidup di dalamnya.",
+
+                source:
+                    "Pemerintah Kabupaten Kebumen; Dinas Pariwisata dan Kebudayaan Kabupaten Kebumen."
+            }
+
+        };
+
+
+        /*
+        ============================================================
+        FUNGSI UTAMA
+        ============================================================
+        */
+
+        const params = new URLSearchParams(window.location.search);
+
+        const id = (
+            params.get("id") || "menganti"
+        ).toLowerCase();
+
+        const item = destinations[id];
+
+
+        /*
+        ============================================================
+        ELEMENT
+        ============================================================
+        */
+
+        const detailPage =
+            document.getElementById("detailPage");
+
+        const errorScreen =
+            document.getElementById("errorScreen");
+
+        const navbar =
+            document.getElementById("navbar");
+
+        const heroImage =
+            document.getElementById("heroImage");
+
+        const heroCategory =
+            document.getElementById("heroCategory");
+
+        const heroLocation =
+            document.getElementById("heroLocation");
+
+        const detailTitle =
+            document.getElementById("detailTitle");
+
+        const heroIntro =
+            document.getElementById("heroIntro");
+
+        const breadcrumbCategory =
+            document.getElementById("breadcrumbCategory");
+
+        const infoCategory =
+            document.getElementById("infoCategory");
+
+        const infoLocation =
+            document.getElementById("infoLocation");
+
+        const detailDescription =
+            document.getElementById("detailDescription");
+
+        const detailHistory =
+            document.getElementById("detailHistory");
+
+        const highlightGrid =
+            document.getElementById("highlightGrid");
+
+        const detailNote =
+            document.getElementById("detailNote");
+
+        const sideLocation =
+            document.getElementById("sideLocation");
+
+        const sideLocationDescription =
+            document.getElementById("sideLocationDescription");
+
+        const sideCategory =
+            document.getElementById("sideCategory");
+
+        const detailSource =
+            document.getElementById("detailSource");
+
+        const relatedGrid =
+            document.getElementById("relatedGrid");
+
+        const currentYear =
+            document.getElementById("currentYear");
+
+        const backTop =
+            document.getElementById("backTop");
+
+
+        /*
+        ============================================================
+        TAMPILKAN DATA
+        ============================================================
+        */
+
+        if (!item) {
+
+            detailPage.style.display = "none";
+
+            errorScreen.classList.add("show");
+
+        } else {
+
+            document.title =
+                item.title + " | Jelajah Kebumen";
+
+
+            /* HERO */
+
+            heroImage.src = item.image;
+            heroImage.alt = item.title;
+
+            heroCategory.textContent =
+                item.category;
+
+            breadcrumbCategory.textContent =
+                item.category;
+
+            heroLocation.textContent =
+                item.location;
+
+            detailTitle.textContent =
+                item.title;
+
+            heroIntro.textContent =
+                item.intro;
+
+
+            /* INFO */
+
+            infoCategory.textContent =
+                item.category;
+
+            infoLocation.textContent =
+                item.location;
+
+
+            /* CONTENT */
+
+            detailDescription.textContent =
+                item.description;
+
+
+            /* HISTORY */
+
+            detailHistory.innerHTML = `
+                <p>${item.history}</p>
+            `;
+
+
+            /* HIGHLIGHTS */
+
+            highlightGrid.innerHTML =
+                item.highlights.map((highlight, index) => {
+
+                    return `
+                        <div class="highlight-card">
+
+                            <span class="highlight-number">
+                                ${String(index + 1).padStart(2, "0")}
+                            </span>
+
+                            <h3>
+                                ${highlight.title}
+                            </h3>
+
+                            <p>
+                                ${highlight.text}
+                            </p>
+
+                        </div>
+                    `;
+
+                }).join("");
+
+
+            /* NOTE */
+
+            detailNote.textContent =
+                item.note;
+
+
+            /* SIDEBAR */
+
+            sideLocation.textContent =
+                item.location;
+
+            sideLocationDescription.textContent =
+                "Lokasi destinasi berada di wilayah " +
+                item.location +
+                ", Kabupaten Kebumen.";
+
+            sideCategory.textContent =
+                item.category;
+
+
+            /* SOURCE */
+
+            detailSource.textContent =
+                item.source;
+
+
+            /* RELATED */
+
+            renderRelated(id);
+
         }
-    };
 
-  const params = new URLSearchParams(window.location.search);
-  const requestedId = params.get("id") || "menganti";
-  const id = requestedId === "hari-ini" ? "kebumen" : requestedId;
-  const item = data[id] || data.menganti;
 
-  document.title = item.title + " | Jelajah Kebumen";
-  document.getElementById("detailCategory").textContent = item.category;
-  document.getElementById("metaCategory").textContent = item.category;
-  document.getElementById("infoCategory").textContent = item.category;
-  document.getElementById("detailTitle").innerHTML = item.title.replace(/(Kebumen)/gi, '<span>$1.</span>');
-  document.getElementById("detailTitleInline").textContent = item.title;
-  document.getElementById("detailIntro").textContent = item.intro;
-  document.getElementById("detailDescription").textContent = item.description;
-  document.getElementById("detailHistory").textContent = item.history;
-  document.getElementById("detailHighlights").textContent = item.highlights;
-  document.getElementById("detailNote").textContent = item.note;
-  document.getElementById("detailSource").href = item.source;
-  document.getElementById("detailYear").textContent = new Date().getFullYear();
+        /*
+        ============================================================
+        RELATED STORIES
+        ============================================================
+        */
 
-  const hero = document.getElementById("heroBg");
-  hero.style.backgroundImage = `url("${item.image}")`;
+        function renderRelated(currentId) {
 
-  const entries = Object.entries(data).filter(([key]) => key !== id);
-  const related = entries.slice(0,3);
-  document.getElementById("relatedGrid").innerHTML = related.map(([key, d]) => `
-    <article class="related-card">
-      <div class="related-img" style="background-image:url('${d.image}')"></div>
-      <div class="related-body">
-        <div class="related-cat">${d.category}</div>
-        <h3>${d.title}</h3>
-        <a href="detail.html?id=${key}">Kenali lebih dekat <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </article>
-  `).join("");
-})();
-</script>
+            const allIds =
+                Object.keys(destinations);
+
+            let candidates =
+                allIds.filter(
+                    key => key !== currentId
+                );
+
+
+            /*
+            Prioritaskan kategori yang sama.
+            */
+
+            const sameCategory =
+                candidates.filter(
+                    key =>
+                        destinations[key].category === item.category
+                );
+
+            const otherCategory =
+                candidates.filter(
+                    key =>
+                        destinations[key].category !== item.category
+                );
+
+
+            let selected = [
+                ...sameCategory,
+                ...otherCategory
+            ].slice(0, 3);
+
+
+            relatedGrid.innerHTML =
+                selected.map(key => {
+
+                    const destination =
+                        destinations[key];
+
+                    return `
+                        <a
+                            href="detail.html?id=${key}"
+                            class="related-card"
+                        >
+
+                            <img
+                                src="${destination.image}"
+                                alt="${destination.title}"
+                                class="related-image"
+                            >
+
+                            <div class="related-content">
+
+                                <div class="related-category">
+                                    ${destination.category}
+                                </div>
+
+                                <h3>
+                                    ${destination.title}
+                                </h3>
+
+                                <p>
+                                    ${destination.intro}
+                                </p>
+
+                            </div>
+
+                        </a>
+                    `;
+
+                }).join("");
+        }
+
+
+        /*
+        ============================================================
+        NAVBAR SCROLL
+        ============================================================
+        */
+
+        function handleNavbar() {
+
+            if (window.scrollY > 50) {
+
+                navbar.classList.add("scrolled");
+
+            } else {
+
+                navbar.classList.remove("scrolled");
+
+            }
+
+        }
+
+        window.addEventListener(
+            "scroll",
+            handleNavbar
+        );
+
+        handleNavbar();
+
+
+        /*
+        ============================================================
+        CURRENT YEAR
+        ============================================================
+        */
+
+        currentYear.textContent =
+            new Date().getFullYear();
+
+
+        /*
+        ============================================================
+        BACK TO TOP
+        ============================================================
+        */
+
+        backTop.addEventListener(
+            "click",
+            function () {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+
+        /*
+        ============================================================
+        IMAGE ERROR FALLBACK
+        ============================================================
+        */
+
+        heroImage.addEventListener(
+            "error",
+            function () {
+
+                this.style.background =
+                    "linear-gradient(135deg, #526653, #344936)";
+
+                this.style.objectFit =
+                    "cover";
+
+            }
+        );
+
+
+        /*
+        ============================================================
+        KEYBOARD BACK
+        ============================================================
+        */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "Escape") {
+
+                    window.location.href =
+                        "index.html";
+
+                }
+
+            }
+        );
+
+    </script>
+
 </body>
 </html>
